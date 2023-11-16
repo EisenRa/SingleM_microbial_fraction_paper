@@ -1,0 +1,11 @@
+sample	N50	L50	num_contigs	largest_contig	total_length	num_bins	assembly_mapping_percent
+KRGM_100_5gb_M	8977	21548	164648	730234	910877090	200	87.65805
+KRGM_91_5gb_M							88.677444
+KRGM_92_5gb_M							91.693054
+KRGM_93_5gb_M							91.27185
+KRGM_94_5gb_M							91.39375
+KRGM_95_5gb_M							91.51124
+KRGM_96_5gb_M							91.26283
+KRGM_97_5gb_M							85.928444
+KRGM_98_5gb_M							88.94108
+KRGM_99_5gb_M							88.74844

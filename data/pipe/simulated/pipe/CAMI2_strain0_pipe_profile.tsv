@@ -1,0 +1,25 @@
+sample	coverage	taxonomy
+CAMI2_strain0_R1	0.46	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria
+CAMI2_strain0_R1	0.17	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales
+CAMI2_strain0_R1	0.23	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Enterococcaceae
+CAMI2_strain0_R1	0.23	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae
+CAMI2_strain0_R1	0.23	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae
+CAMI2_strain0_R1	1.12	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae
+CAMI2_strain0_R1	0.06	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae
+CAMI2_strain0_R1	3.02	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus
+CAMI2_strain0_R1	0.03	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus
+CAMI2_strain0_R1	0.02	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Citrobacter
+CAMI2_strain0_R1	29.22	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Staphylococcales; f__Staphylococcaceae; g__Staphylococcus; s__Staphylococcus aureus
+CAMI2_strain0_R1	35.52	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Enterococcaceae; g__Enterococcus_B; s__Enterococcus_B faecium
+CAMI2_strain0_R1	0.74	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Enterococcaceae; g__Enterococcus; s__Enterococcus faecalis
+CAMI2_strain0_R1	159.5	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__Streptococcus pneumoniae
+CAMI2_strain0_R1	3.67	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__Lactobacillus intestinalis
+CAMI2_strain0_R1	52.83	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia fergusonii
+CAMI2_strain0_R1	134.94	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia coli
+CAMI2_strain0_R1	17.82	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia sp005843885
+CAMI2_strain0_R1	4.86	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Citrobacter; s__Citrobacter freundii
+CAMI2_strain0_R1	1.61	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Citrobacter; s__Citrobacter freundii_A
+CAMI2_strain0_R1	46.42	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Klebsiella; s__Klebsiella pneumoniae
+CAMI2_strain0_R1	5.57	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Klebsiella; s__Klebsiella africana
+CAMI2_strain0_R1	5.86	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Phocaeicola; s__Phocaeicola sartorii
+CAMI2_strain0_R1	2.56	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Tannerellaceae; g__Parabacteroides; s__Parabacteroides goldsteinii

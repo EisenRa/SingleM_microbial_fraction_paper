@@ -1,0 +1,3 @@
+Genome	HRGM_KRGM_100_05gb_M Relative Abundance (%)	HRGM_KRGM_91_05gb_M Relative Abundance (%)	HRGM_KRGM_92_05gb_M Relative Abundance (%)	HRGM_KRGM_93_05gb_M Relative Abundance (%)	HRGM_KRGM_94_05gb_M Relative Abundance (%)	HRGM_KRGM_95_05gb_M Relative Abundance (%)	HRGM_KRGM_96_05gb_M Relative Abundance (%)	HRGM_KRGM_97_05gb_M Relative Abundance (%)	HRGM_KRGM_98_05gb_M Relative Abundance (%)	HRGM_KRGM_99_05gb_M Relative Abundance (%)
+unmapped	14.383263	8.52791	8.539295	7.3601484	8.090234	7.8495026	7.497472	11.883444	11.319179	10.991323
+HRGM_Genomes	85.61674	91.47209	91.46071	92.639854	91.90977	92.1505	92.502525	88.116554	88.680824	89.008675

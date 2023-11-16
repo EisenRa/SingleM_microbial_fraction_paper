@@ -1,0 +1,175 @@
+sample	coverage	taxonomy
+KRGM_92_5gb_M_1	1.41	Root; d__Archaea
+KRGM_92_5gb_M_1	2.77	Root; d__Bacteria
+KRGM_92_5gb_M_1	0.17	Root; d__Bacteria; p__Actinomycetota
+KRGM_92_5gb_M_1	1.98	Root; d__Bacteria; p__Bacillota_A; c__Clostridia
+KRGM_92_5gb_M_1	1.36	Root; d__Bacteria; p__Bacillota; c__Bacilli
+KRGM_92_5gb_M_1	0.17	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria
+KRGM_92_5gb_M_1	0.94	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales
+KRGM_92_5gb_M_1	0.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Christensenellales
+KRGM_92_5gb_M_1	0.91	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales
+KRGM_92_5gb_M_1	0.17	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales
+KRGM_92_5gb_M_1	1.39	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales
+KRGM_92_5gb_M_1	0.28	Root; d__Bacteria; p__Actinomycetota; c__Actinomycetia; o__Actinomycetales
+KRGM_92_5gb_M_1	0.34	Root; d__Bacteria; p__Bacillota_C; c__Negativicutes; o__Veillonellales
+KRGM_92_5gb_M_1	3.85	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae
+KRGM_92_5gb_M_1	1.6	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Acutalibacteraceae
+KRGM_92_5gb_M_1	1.76	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae
+KRGM_92_5gb_M_1	8.52	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae
+KRGM_92_5gb_M_1	0.06	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Anaerotignaceae
+KRGM_92_5gb_M_1	0.59	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Christensenellales; f__CAG-74
+KRGM_92_5gb_M_1	0.05	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__UBA1381; f__UBA1381
+KRGM_92_5gb_M_1	0.29	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Peptostreptococcales; f__Peptostreptococcaceae
+KRGM_92_5gb_M_1	1.49	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae
+KRGM_92_5gb_M_1	0.23	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Erysipelotrichales; f__Erysipelotrichaceae
+KRGM_92_5gb_M_1	0.06	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Erysipelotrichales; f__Coprobacillaceae
+KRGM_92_5gb_M_1	0.23	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae
+KRGM_92_5gb_M_1	0.57	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae
+KRGM_92_5gb_M_1	0.96	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae
+KRGM_92_5gb_M_1	0.61	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae
+KRGM_92_5gb_M_1	13.03	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium
+KRGM_92_5gb_M_1	0.17	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Faecousia
+KRGM_92_5gb_M_1	0.33	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Dysosmobacter
+KRGM_92_5gb_M_1	0.64	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__CAG-103
+KRGM_92_5gb_M_1	0.29	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__ER4
+KRGM_92_5gb_M_1	0.52	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Roseburia
+KRGM_92_5gb_M_1	1.66	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Lachnospira
+KRGM_92_5gb_M_1	0.03	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Ventrimonas
+KRGM_92_5gb_M_1	0.43	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__CAG-56
+KRGM_92_5gb_M_1	0.16	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Acetatifactor
+KRGM_92_5gb_M_1	0.07	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Marvinbryantia
+KRGM_92_5gb_M_1	0.02	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Copromonas
+KRGM_92_5gb_M_1	0.93	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Enterocloster
+KRGM_92_5gb_M_1	0.06	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eisenbergiella
+KRGM_92_5gb_M_1	0.01	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Lachnoclostridium_B
+KRGM_92_5gb_M_1	0.02	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Anaerotignaceae; g__HGM11808
+KRGM_92_5gb_M_1	0.17	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium
+KRGM_92_5gb_M_1	3.58	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus
+KRGM_92_5gb_M_1	0.04	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Latilactobacillus
+KRGM_92_5gb_M_1	0.32	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Coriobacteriaceae; g__Collinsella
+KRGM_92_5gb_M_1	2.29	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Senegalimassilia
+KRGM_92_5gb_M_1	0.28	Root; d__Bacteria; p__Bacillota_C; c__Negativicutes; o__Veillonellales; f__Veillonellaceae; g__Veillonella
+KRGM_92_5gb_M_1	0.03	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia
+KRGM_92_5gb_M_1	0.33	Root; d__Bacteria; p__Campylobacterota; c__Campylobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter_B
+KRGM_92_5gb_M_1	39.15	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Gemmiger; s__Gemmiger formicilis
+KRGM_92_5gb_M_1	3.55	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Gemmiger; s__Gemmiger qucibialis
+KRGM_92_5gb_M_1	31.96	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium; s__Faecalibacterium sp900539945
+KRGM_92_5gb_M_1	3.03	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium; s__Faecalibacterium prausnitzii_I
+KRGM_92_5gb_M_1	14.02	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium; s__Faecalibacterium duncaniae
+KRGM_92_5gb_M_1	49.52	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium; s__Faecalibacterium prausnitzii_D
+KRGM_92_5gb_M_1	17.32	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium; s__Faecalibacterium sp900758465
+KRGM_92_5gb_M_1	11.56	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Faecalibacterium; s__Faecalibacterium longum
+KRGM_92_5gb_M_1	1.11	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Ruthenibacterium; s__Ruthenibacterium lactatiformans
+KRGM_92_5gb_M_1	46.01	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Ruminococcus_D; s__Ruminococcus_D sp000434695
+KRGM_92_5gb_M_1	26.15	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Ruminococcaceae; g__Ruminococcus_C; s__Ruminococcus_C sp000980705
+KRGM_92_5gb_M_1	22.93	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Acutalibacteraceae; g__Eubacterium_R; s__Eubacterium_R sp014465955
+KRGM_92_5gb_M_1	3.11	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Acutalibacteraceae; g__Ruminococcus_E; s__Ruminococcus_E bromii
+KRGM_92_5gb_M_1	37.75	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Acutalibacteraceae; g__Ruminococcus_E; s__Ruminococcus_E bromii_B
+KRGM_92_5gb_M_1	5.77	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Acutalibacteraceae; g__Fimenecus; s__Fimenecus sp000432435
+KRGM_92_5gb_M_1	0.4	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Acutalibacteraceae; g__UMGS1071; s__UMGS1071 sp900542375
+KRGM_92_5gb_M_1	4.1	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Faecousia; s__Faecousia sp003525905
+KRGM_92_5gb_M_1	1.37	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Faecousia; s__Faecousia sp900540635
+KRGM_92_5gb_M_1	1.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Dysosmobacter; s__Dysosmobacter welbionis
+KRGM_92_5gb_M_1	0.4	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Dysosmobacter; s__Dysosmobacter sp944387035
+KRGM_92_5gb_M_1	0.7	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Dysosmobacter; s__Dysosmobacter sp900542115
+KRGM_92_5gb_M_1	9.69	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__CAG-103; s__CAG-103 sp000432375
+KRGM_92_5gb_M_1	0.43	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__CAG-103; s__CAG-103 sp934591895
+KRGM_92_5gb_M_1	5.26	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Vescimonas; s__Vescimonas coprocola
+KRGM_92_5gb_M_1	0.73	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__ER4; s__ER4 sp900317525
+KRGM_92_5gb_M_1	2.26	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Lawsonibacter; s__Lawsonibacter sp900066825
+KRGM_92_5gb_M_1	0.42	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Flavonifractor; s__Flavonifractor plautii
+KRGM_92_5gb_M_1	0.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Oscillospiraceae; g__Pseudoscilispira; s__Pseudoscilispira sp018369915
+KRGM_92_5gb_M_1	5.01	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Butyricicoccaceae; g__Agathobaculum; s__Agathobaculum sp003481705
+KRGM_92_5gb_M_1	2.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Oscillospirales; f__Butyricicoccaceae; g__Agathobaculum; s__Agathobaculum butyriciproducens
+KRGM_92_5gb_M_1	59.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Fusicatenibacter; s__Fusicatenibacter saccharivorans
+KRGM_92_5gb_M_1	74.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Anaerostipes; s__Anaerostipes hadrus
+KRGM_92_5gb_M_1	25.45	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Agathobacter; s__Agathobacter faecis
+KRGM_92_5gb_M_1	83.76	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Agathobacter; s__Agathobacter rectalis
+KRGM_92_5gb_M_1	17.98	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Agathobacter; s__Agathobacter sp900317585
+KRGM_92_5gb_M_1	22.82	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Agathobacter; s__Agathobacter sp934365945
+KRGM_92_5gb_M_1	25.17	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Mediterraneibacter; s__Mediterraneibacter lactaris
+KRGM_92_5gb_M_1	0.75	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Mediterraneibacter; s__Mediterraneibacter torques
+KRGM_92_5gb_M_1	5.06	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Mediterraneibacter; s__Mediterraneibacter faecis
+KRGM_92_5gb_M_1	15.04	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__KLE1615; s__KLE1615 sp900066985
+KRGM_92_5gb_M_1	2.98	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__KLE1615; s__KLE1615 sp934292725
+KRGM_92_5gb_M_1	16.38	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia; s__Blautia stercoris
+KRGM_92_5gb_M_1	63.04	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A wexlerae
+KRGM_92_5gb_M_1	12.5	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A sp003474435
+KRGM_92_5gb_M_1	10.48	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A sp900066335
+KRGM_92_5gb_M_1	8.09	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A faecis
+KRGM_92_5gb_M_1	10.26	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A sp900120195
+KRGM_92_5gb_M_1	2.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A obeum
+KRGM_92_5gb_M_1	1.29	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Blautia_A; s__Blautia_A sp900066145
+KRGM_92_5gb_M_1	6.02	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Anaerobutyricum; s__Anaerobutyricum hallii
+KRGM_92_5gb_M_1	8.19	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Anaerobutyricum; s__Anaerobutyricum soehngenii
+KRGM_92_5gb_M_1	0.47	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__CAG-317; s__CAG-317 sp000433215
+KRGM_92_5gb_M_1	43.43	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Wujia; s__Wujia chipingensis
+KRGM_92_5gb_M_1	1.3	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__CAG-45; s__CAG-45 sp000438375
+KRGM_92_5gb_M_1	2.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eubacterium_I; s__Eubacterium_I ramulus_A
+KRGM_92_5gb_M_1	2.16	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eubacterium_I; s__Eubacterium_I ramulus
+KRGM_92_5gb_M_1	14.03	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Dorea_A; s__Dorea_A longicatena_B
+KRGM_92_5gb_M_1	1.04	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eubacterium_F; s__Eubacterium_F sp934322085
+KRGM_92_5gb_M_1	8.93	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eubacterium_F; s__Eubacterium_F sp003491505
+KRGM_92_5gb_M_1	5.17	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Dorea; s__Dorea formicigenerans
+KRGM_92_5gb_M_1	1.78	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Roseburia; s__Roseburia sp019411365
+KRGM_92_5gb_M_1	11.3	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Roseburia; s__Roseburia intestinalis
+KRGM_92_5gb_M_1	2.97	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Roseburia; s__Roseburia hominis
+KRGM_92_5gb_M_1	0.51	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Clostridium_Q; s__Clostridium_Q symbiosum
+KRGM_92_5gb_M_1	5.14	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Clostridium_Q; s__Clostridium_Q fessum
+KRGM_92_5gb_M_1	0.4	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Faecalimonas; s__Faecalimonas phoceensis
+KRGM_92_5gb_M_1	5.29	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Pararoseburia; s__Pararoseburia lenta
+KRGM_92_5gb_M_1	4.03	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Coprococcus_A; s__Coprococcus_A catus_A
+KRGM_92_5gb_M_1	0.94	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Choladocola; s__Choladocola sp003480725
+KRGM_92_5gb_M_1	0.47	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Choladocola; s__Choladocola sp003481535
+KRGM_92_5gb_M_1	4.91	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Lachnospira; s__Lachnospira sp000436475
+KRGM_92_5gb_M_1	4.02	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Lachnospira; s__Lachnospira sp019424245
+KRGM_92_5gb_M_1	1.36	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Ventrimonas; s__Ventrimonas sp003478505
+KRGM_92_5gb_M_1	1.52	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Ventrimonas; s__Ventrimonas sp003480315
+KRGM_92_5gb_M_1	1.34	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eubacterium_G; s__Eubacterium_G ventriosum
+KRGM_92_5gb_M_1	3.36	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Eubacterium_G; s__Eubacterium_G sp000435815
+KRGM_92_5gb_M_1	8.9	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Oliverpabstia; s__Oliverpabstia faecicola
+KRGM_92_5gb_M_1	7.01	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Acetatifactor; s__Acetatifactor intestinalis
+KRGM_92_5gb_M_1	7.59	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Butyribacter; s__Butyribacter hominis
+KRGM_92_5gb_M_1	0.53	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Limivivens; s__Limivivens sp905214955
+KRGM_92_5gb_M_1	1.4	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Limivivens; s__Limivivens sp900543575
+KRGM_92_5gb_M_1	0.86	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Copromonas; s__Copromonas sp900066055
+KRGM_92_5gb_M_1	2.01	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Copromonas; s__Copromonas sp900066785
+KRGM_92_5gb_M_1	1.2	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Enterocloster; s__Enterocloster sp900543885
+KRGM_92_5gb_M_1	0.7	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Enterocloster; s__Enterocloster sp900541315
+KRGM_92_5gb_M_1	0.53	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Enterocloster; s__Enterocloster sp001517625
+KRGM_92_5gb_M_1	1.57	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Schaedlerella; s__Schaedlerella sp900066545
+KRGM_92_5gb_M_1	0.44	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Lachnoclostridium_B; s__Lachnoclostridium_B sp900066555
+KRGM_92_5gb_M_1	28.35	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__CAG-274; g__CAG-274; s__CAG-274 sp900545305
+KRGM_92_5gb_M_1	0.43	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Lachnospirales; f__Anaerotignaceae; g__HGM11808; s__HGM11808 sp900757025
+KRGM_92_5gb_M_1	8.89	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__Clostridium sp001916075
+KRGM_92_5gb_M_1	0.38	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Christensenellales; f__CAG-74; g__Egerieenecus; s__Egerieenecus sp900553315
+KRGM_92_5gb_M_1	10.11	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Christensenellales; f__CAG-74; g__UBA11524; s__UBA11524 sp000437595
+KRGM_92_5gb_M_1	1.75	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Christensenellales; f__CAG-74; g__Ventricola; s__Ventricola sp900542445
+KRGM_92_5gb_M_1	4.13	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__UBA1381; f__UBA1381; g__CAG-41; s__CAG-41 sp900066215
+KRGM_92_5gb_M_1	1.08	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Peptostreptococcales; f__Peptostreptococcaceae; g__Intestinibacter; s__Intestinibacter bartlettii
+KRGM_92_5gb_M_1	1.24	Root; d__Bacteria; p__Bacillota_A; c__Clostridia; o__Peptostreptococcales; f__Peptostreptococcaceae; g__Romboutsia; s__Romboutsia timonensis
+KRGM_92_5gb_M_1	107.04	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__Bacteroides uniformis
+KRGM_92_5gb_M_1	17.14	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__Bacteroides thetaiotaomicron
+KRGM_92_5gb_M_1	35.18	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__Bacteroides stercoris
+KRGM_92_5gb_M_1	80.72	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Phocaeicola; s__Phocaeicola vulgatus
+KRGM_92_5gb_M_1	13.01	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Tannerellaceae; g__Parabacteroides; s__Parabacteroides merdae
+KRGM_92_5gb_M_1	3.35	Root; d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Bacteroidales; f__Tannerellaceae; g__Parabacteroides; s__Parabacteroides distasonis
+KRGM_92_5gb_M_1	29.09	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Holdemanella; s__Holdemanella porci_A
+KRGM_92_5gb_M_1	0.45	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Erysipelotrichales; f__Coprobacillaceae; g__Thomasclavelia; s__Thomasclavelia ramosa
+KRGM_92_5gb_M_1	2.77	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__Streptococcus sp000187445
+KRGM_92_5gb_M_1	2.35	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__Streptococcus vestibularis
+KRGM_92_5gb_M_1	6.86	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__Streptococcus sp001556435
+KRGM_92_5gb_M_1	6.56	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__Streptococcus salivarius
+KRGM_92_5gb_M_1	3.0	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Ligilactobacillus; s__Ligilactobacillus ruminis
+KRGM_92_5gb_M_1	0.86	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Latilactobacillus; s__Latilactobacillus curvatus
+KRGM_92_5gb_M_1	2.72	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Coriobacteriaceae; g__Collinsella; s__Collinsella sp905214105
+KRGM_92_5gb_M_1	0.96	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Senegalimassilia; s__Senegalimassilia sp900550055
+KRGM_92_5gb_M_1	0.96	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Senegalimassilia; s__Senegalimassilia sp905215325
+KRGM_92_5gb_M_1	0.94	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Senegalimassilia; s__Senegalimassilia sp934630535
+KRGM_92_5gb_M_1	2.66	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Senegalimassilia; s__Senegalimassilia anaerobia
+KRGM_92_5gb_M_1	1.14	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Senegalimassilia; s__Senegalimassilia sp934661765
+KRGM_92_5gb_M_1	7.64	Root; d__Bacteria; p__Actinomycetota; c__Coriobacteriia; o__Coriobacteriales; f__Eggerthellaceae; g__Eggerthella; s__Eggerthella lenta
+KRGM_92_5gb_M_1	13.93	Root; d__Bacteria; p__Bacillota_C; c__Negativicutes; o__Veillonellales; f__Dialisteraceae; g__Dialister; s__Dialister hominis
+KRGM_92_5gb_M_1	5.25	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia fergusonii
+KRGM_92_5gb_M_1	6.61	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia coli
+KRGM_92_5gb_M_1	1.42	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia sp005843885

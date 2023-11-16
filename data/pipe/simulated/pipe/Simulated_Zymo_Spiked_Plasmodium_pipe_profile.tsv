@@ -1,0 +1,23 @@
+sample	coverage	taxonomy
+Simulated_Zymo_Spiked_Plasmodium_R1	1.53	Root; d__Bacteria
+Simulated_Zymo_Spiked_Plasmodium_R1	0.11	Root; d__Bacteria; p__Pseudomonadota
+Simulated_Zymo_Spiked_Plasmodium_R1	0.34	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria
+Simulated_Zymo_Spiked_Plasmodium_R1	0.91	Root; d__Bacteria; p__Bacillota; c__Bacilli
+Simulated_Zymo_Spiked_Plasmodium_R1	0.34	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales
+Simulated_Zymo_Spiked_Plasmodium_R1	0.52	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae
+Simulated_Zymo_Spiked_Plasmodium_R1	0.11	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae
+Simulated_Zymo_Spiked_Plasmodium_R1	0.07	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas
+Simulated_Zymo_Spiked_Plasmodium_R1	0.42	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia
+Simulated_Zymo_Spiked_Plasmodium_R1	1.66	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Bacillus
+Simulated_Zymo_Spiked_Plasmodium_R1	5.43	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas; s__Pseudomonas aeruginosa
+Simulated_Zymo_Spiked_Plasmodium_R1	8.43	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Salmonella; s__Salmonella enterica
+Simulated_Zymo_Spiked_Plasmodium_R1	3.26	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia fergusonii
+Simulated_Zymo_Spiked_Plasmodium_R1	3.32	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia coli
+Simulated_Zymo_Spiked_Plasmodium_R1	2.39	Root; d__Bacteria; p__Pseudomonadota; c__Gammaproteobacteria; o__Enterobacterales; f__Enterobacteriaceae; g__Escherichia; s__Escherichia sp005843885
+Simulated_Zymo_Spiked_Plasmodium_R1	22.34	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Limosilactobacillus; s__Limosilactobacillus fermentum
+Simulated_Zymo_Spiked_Plasmodium_R1	14.3	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Enterococcaceae; g__Enterococcus; s__Enterococcus faecalis
+Simulated_Zymo_Spiked_Plasmodium_R1	12.39	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Lactobacillales; f__Listeriaceae; g__Listeria; s__Listeria monocytogenes_B
+Simulated_Zymo_Spiked_Plasmodium_R1	15.18	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Staphylococcales; f__Staphylococcaceae; g__Staphylococcus; s__Staphylococcus aureus
+Simulated_Zymo_Spiked_Plasmodium_R1	5.47	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Bacillus; s__Bacillus spizizenii
+Simulated_Zymo_Spiked_Plasmodium_R1	1.93	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Bacillus; s__Bacillus cabrialesii
+Simulated_Zymo_Spiked_Plasmodium_R1	0.49	Root; d__Bacteria; p__Bacillota; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Bacillus; s__Bacillus sp010093085
