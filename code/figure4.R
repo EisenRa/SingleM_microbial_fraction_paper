@@ -7,25 +7,29 @@
 library(tidyverse)
 library(patchwork)
 
+#Hyena metada
+hyena_md <- read_delim("data/msystems.00965-22-s0008.txt") %>%
+  unite("sample", hyenaID:sampleID, sep = "_")
 
-read_fraction_files <- list.files("data/pipe/real_data/humans/r214",
+read_fraction_files <- list.files("data/pipe/real_data/hyena/r214/",
                                   pattern = "*_read_fraction.tsv",
                                   full.names = TRUE
-                                  )
+)
 
-MAG_mapping_files <- list.files("data/pipe/real_data/humans/",
+MAG_mapping_files <- list.files("data/pipe/real_data/hyena/",
                                 pattern = "*mapping_rate.txt",
                                 full.names = TRUE
-                                )
+)
 
-assembly_mapping_files <- list.files("data/pipe/real_data/humans/",
+assembly_mapping_files <- list.files("data/pipe/real_data/hyena/",
                                      pattern = "*summary.tsv",
                                      full.names = TRUE
-                                     )
+)
 
 assembly_mapping_rates <- map_dfr(assembly_mapping_files, read_delim) %>%
   select(sample, assembly_mapping_percent) %>%
-  mutate(sample = str_replace_all(sample, "_M", "")) 
+  mutate(sample = str_replace_all(sample, "_M", ""))
+
 
 MAG_mapping_rates <- map_dfr(MAG_mapping_files, read_delim) %>%
   filter(Genome == "unmapped") %>%
@@ -38,12 +42,7 @@ MAG_mapping_rates <- map_dfr(MAG_mapping_files, read_delim) %>%
   mutate(
     sample = str_replace_all(sample, "_M Relative Abundance \\(%\\)", ""),
     percent_mapped_MAGs = 100 - percent_unmapped,
-    catalogue = case_when(
-      str_detect(sample, "HRGM") ~ "HRGM",
-      !str_detect(sample, "HRGM") ~ "MAGs"
-    ),
-    sample = str_replace_all(sample, "HRGM_", "")
-  ) %>%
+    ) %>%
   rename("percent_unmapped_MAGs" = percent_unmapped)
 
 estimates <- map_dfr(read_fraction_files, read_delim) %>%
@@ -52,59 +51,61 @@ estimates <- map_dfr(read_fraction_files, read_delim) %>%
   left_join(., assembly_mapping_rates, by = "sample") %>%
   mutate(
     dataset = case_when(
-      str_detect(catalogue, "HRGM") ~ "HRGM",
-      str_detect(sample, "05gb") ~ "human_faecal_0.5gbp",
-      str_detect(sample, "_5gb") ~ "human_faecal_5gbp",
-      ),
-    read_fraction_full = (bacterial_archaeal_bases / metagenome_size) * 100)
-    )
+      str_detect(sample, "D1_") ~ "hyena_D1",
+      str_detect(sample, "D3_") ~ "hyena_D3",
+      str_detect(sample, "G1_") ~ "hyena_G1",
+      str_detect(sample, "G3_") ~ "hyena_G3"
+    ),
+    read_fraction_full = bacterial_archaeal_bases / metagenome_size * 100
+  )
+
 
 #Plotting
-colours_humans <- c("human_faecal_0.5gbp" = "#6082B6", "human_faecal_5gbp" = "darkblue", "HRGM" = "orange")
+colours_hyenas <- c("hyena_D1" = "#ffffcc", "hyena_D3" = "#a1dab4", "hyena_G1" = "#41b6c4", "hyena_G3" = "#225ea8")
 
 fig4a <- estimates %>%
-  ggplot(aes(x = assembly_mapping_percent, y = read_fraction_full, colour = dataset)) +
-  geom_point(size = 5, alpha = 0.6) +
+  ggplot(aes(x = assembly_mapping_percent, y = read_fraction_full, fill = dataset)) +
+  geom_point(size = 5, alpha = 0.8, shape = 21, stroke = 0.5) +
   geom_abline(intercept = 0, slope = 1) +
-  scale_x_continuous(limits = c(0, 100)) +
-  scale_y_continuous(limits = c(0, 102)) +
-  scale_color_manual(values = colours_humans) +
+  scale_x_continuous(limits = c(0, 120)) +
+  scale_y_continuous(limits = c(0, 120)) +
+  scale_color_manual(values = colours_hyenas) +
   theme_minimal() +
   theme(
     legend.position = "none",
-    axis.text = element_text(size = 12),
-    axis.title.x = element_text(size = 14),
-    axis.title.y = element_text(size = 14),
+    axis.text = element_text(size = 16),
+    axis.title.x = element_text(size = 16),
+    axis.title.y = element_text(size = 16),
   ) +
   labs(y = "SingleM microbial fraction (%)", x = "Percent mapping to assembly (%)") +
-  ggtitle("Assembly")
+  ggtitle("Assemblies")
 
 fig4b <- estimates %>%
-  ggplot(aes(x = percent_mapped_MAGs, y = read_fraction_full, colour = dataset)) +
-  geom_point(size = 5, alpha = 0.6) +
+  ggplot(aes(x = percent_mapped_MAGs, y = read_fraction_full, fill = dataset)) +
+  geom_point(size = 5, alpha = 0.8, shape = 21, stroke = 0.5) +
   geom_abline(intercept = 0, slope = 1) +
-  scale_x_continuous(limits = c(0, 100)) +
-  scale_y_continuous(limits = c(0, 102)) +
-  scale_color_manual(values = colours_humans) +
+  scale_x_continuous(limits = c(0, 120)) +
+  scale_y_continuous(limits = c(0, 120)) +
+  scale_color_manual(values = colours_hyenas) +
   theme_minimal() +
   theme(
     legend.position = "top",
-    axis.text = element_text(size = 12),
-    axis.title.x = element_text(size = 14),
-    axis.title.y = element_text(size = 14),
+    axis.text = element_text(size = 16),
+    axis.title.x = element_text(size = 16),
+    axis.title.y = element_text(size = 16),
   ) +
-  labs(y = "SingleM microbial fraction (%)", x = "Percent mapping to MAG catalogue (%)") +
+  labs(y = "SingleM microbial fraction (%)", x = "Percent mapping to de novo MAGs (%)") +
   ggtitle("MAG catalogue")
 
-combined <- fig4a | fig4b +
-  plot_layout(guides = "collect") &
+combined_hyenas <- fig4a | fig4b + plot_layout(guides = "collect") &
   theme(
     legend.position = "top",
     legend.title = element_blank(),
     legend.text = element_text(size = 14),
+    title = element_text(size = 18, face = "bold")
   )
 
-fig4 <- combined + plot_annotation(tag_levels = "A") &
+fig4 <- combined_hyenas + plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(size = 20, face = "bold"))
 
-ggsave("figures/Figure_4.png", fig4, width = 15, height = 7.5, unit = "in")
+ggsave("figures/Figure_4.png", fig5, width = 15, height = 7.5, unit = "in")

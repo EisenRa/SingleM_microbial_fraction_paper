@@ -1,0 +1,994 @@
+sampleID	hyenaID	matriline	DOB	age_yrs	reproductive_state	social_rank	standardized_social_rank	sample_date	sample_year	prey_abundance	alpha-diversity?	beta-diversity?	metagenomes?
+P1	D2	2	28-Jun-03	2.5	nulliparous	12	-0.38	21-Jan-06	2006	37.75	Yes	Yes	No
+P10	M2	2	23-Jul-94	6.67	lactating	7	0.29	2-Apr-01	2001	199.00	Yes	Yes	No
+P101	M4	4	1-Mar-87	6.67	lactating	9	0.20	23-Nov-93	1993	26.25	Yes	Yes	No
+P102	D1	1	25-Jun-96	4	lactating	1	1.00	21-Jul-00	2000	65.75	Yes	Yes	Yes
+P103	G4	4	4-Mar-03	7	lactating	25	-0.71	7-Mar-10	2010	125.67	Yes	Yes	No
+P104	M4	4	1-Mar-87	8.33	lactating	17	-0.10	19-Jul-95	1995	353.25	Yes	Yes	No
+P105	D4	4	4-Jan-92	3.75	lactating	18	-0.17	15-Oct-95	1995	54.25	Yes	Yes	No
+P106	M2	2	23-Jul-94	10.42	lactating	10	-0.20	28-Dec-04	2004	50.50	Yes	Yes	No
+P107	D1	1	25-Jun-96	3.92	lactating	1	1.00	5-Jun-00	2000	158.25	Yes	Yes	Yes
+P108	D2	2	28-Jun-03	7.92	pregnant	29	-0.43	2-Jun-11	2011	109.00	Yes	Yes	No
+P109	M4	4	1-Mar-87	7.08	lactating	11	0.13	4-Apr-94	1994	118.25	Yes	Yes	No
+P11	G1	1	20-Mar-01	3.58	lactating	2	0.87	26-Oct-04	2004	27.50	Yes	Yes	No
+P110	M3	3	1-Feb-85	9.58	lactating	7	0.47	27-Sep-94	1994	170.25	Yes	Yes	No
+P111	G4	4	4-Mar-03	9.5	other	45	-0.72	30-Sep-12	2012	151.75	Yes	Yes	No
+P112	D3	3	7-Nov-92	2.42	nulliparous	13	0.17	13-Apr-95	1995	171.25	Yes	Yes	No
+P113	G4	4	4-Mar-03	8.08	lactating	34	-0.69	9-Apr-11	2011	138.00	Yes	Yes	No
+P114	G1	1	20-Mar-01	3.92	lactating	4	0.66	2-Mar-05	2005	34.00	Yes	Yes	No
+P115	G2	2	20-Jul-08	7.83	pregnant	NA	NA	4-Jun-16	2016	222.29	Yes	Yes	No
+P116	D4	4	4-Jan-92	11.92	lactating	17	-1.00	11-Dec-03	2003	12.00	Yes	Yes	No
+P117	D3	3	7-Nov-92	16.17	lactating	17	-0.52	9-Jan-09	2009	62.00	Yes	Yes	No
+P118	G4	4	4-Mar-03	3	nulliparous	17	-1.00	13-Mar-06	2006	42.33	Yes	Yes	No
+P119	D4	4	4-Jan-92	2.92	lactating	12	0.04	10-Dec-94	1994	161.75	Yes	Yes	No
+P12	D4	4	4-Jan-92	5.5	lactating	21	-0.37	9-Jul-97	1997	193.25	Yes	Yes	No
+P120	G4	4	4-Mar-03	10.83	lactating	40	-0.73	6-Jan-14	2014	81.83	Yes	Yes	No
+P121	M2	2	23-Jul-94	11.5	lactating	11	-0.25	27-Jan-06	2006	37.75	Yes	Yes	No
+P122	D4	4	4-Jan-92	9.33	lactating	18	-1.00	16-May-01	2001	357.67	Yes	Yes	No
+P123	D4	4	4-Jan-92	10.75	lactating	16	-1.00	3-Nov-02	2002	95.50	Yes	Yes	No
+P124	M4	4	1-Mar-87	11.92	lactating	20	-0.26	23-Feb-99	1999	76.00	Yes	Yes	No
+P125	G1	1	20-Mar-01	6.17	pregnant	4	0.60	7-Jun-07	2007	218.33	Yes	Yes	No
+P126	M4	4	1-Mar-87	7.5	lactating	11	0.13	13-Sep-94	1994	346.50	Yes	Yes	No
+P127	D1	1	25-Jun-96	11.25	other	1	1.00	30-Sep-07	2007	85.60	Yes	Yes	No
+P128	D3	3	7-Nov-92	7.08	lactating	10	-0.20	2-Jan-00	2000	73.25	Yes	Yes	No
+P129	G2	2	20-Jul-08	6.58	lactating	NA	NA	27-Feb-15	2015	126.33	Yes	Yes	No
+P13	G1	1	20-Mar-01	5.92	lactating	4	0.60	6-Mar-07	2007	115.33	Yes	Yes	No
+P130	M2	2	23-Jul-94	5.42	lactating	6	0.33	10-Jan-00	2000	73.25	Yes	Yes	No
+P131	G1	1	20-Mar-01	4.67	pregnant	4	0.66	15-Dec-05	2005	28.67	Yes	Yes	No
+P132	D1	1	25-Jun-96	9.83	lactating	1	1.00	14-May-06	2006	179.83	Yes	Yes	No
+P133	G3	3	2-Mar-07	8.83	lactating	NA	NA	6-Jan-16	2016	149.00	Yes	Yes	No
+P134	D3	3	7-Nov-92	22.92	other	NA	NA	22-Oct-15	2015	29.14	Yes	Yes	No
+P135	D4	4	4-Jan-92	14.42	lactating	16	-0.88	19-Jun-06	2006	108.67	Yes	Yes	No
+P136	G4	4	4-Mar-03	6.67	lactating	18	-0.61	1-Dec-09	2009	190.83	Yes	Yes	No
+P137	D4	4	4-Jan-92	8.33	lactating	15	-0.86	5-May-00	2000	106.25	Yes	Yes	No
+P138	D3	3	7-Nov-92	13.42	lactating	14	-0.63	21-Apr-06	2006	212.67	Yes	Yes	No
+P139	G4	4	4-Mar-03	10.5	lactating	40	-0.65	1-Oct-13	2013	77.83	Yes	Yes	No
+P14	G3	3	2-Mar-07	8.17	lactating	NA	NA	15-May-15	2015	205.50	Yes	Yes	Yes
+P140	G1	1	20-Mar-01	7.42	lactating	6	0.47	28-Aug-08	2008	311.33	Yes	Yes	No
+P141	D4	4	4-Jan-92	10.08	lactating	16	-1.00	24-Feb-02	2002	208.75	Yes	Yes	No
+P142	D4	4	4-Jan-92	14.75	lactating	16	-0.88	16-Oct-06	2006	46.83	Yes	Yes	No
+P143	G3	3	2-Mar-07	7.17	lactating	45	-0.95	2-May-14	2014	93.67	Yes	Yes	Yes
+P144	G4	4	4-Mar-03	8.17	lactating	34	-0.69	21-May-11	2011	106.44	Yes	Yes	No
+P145	D1	1	25-Jun-96	9.42	pregnant	1	1.00	7-Dec-05	2005	30.00	Yes	Yes	No
+P146	M3	3	1-Feb-85	9.58	lactating	7	0.47	11-Sep-94	1994	346.50	Yes	Yes	No
+P147	D2	2	28-Jun-03	3.5	pregnant	10	-0.20	26-Jan-07	2007	184.00	Yes	Yes	No
+P148	G3	3	2-Mar-07	4.58	lactating	39	-0.94	18-Oct-11	2011	168.50	Yes	Yes	No
+P149	G3	3	2-Mar-07	7.92	pregnant	NA	NA	24-Feb-15	2015	120.50	Yes	Yes	Yes
+P15	D3	3	7-Nov-92	13.17	lactating	14	-0.63	25-Jan-06	2006	37.75	Yes	Yes	No
+P150	D1	1	25-Jun-96	7.25	lactating	1	1.00	2-Oct-03	2003	83.50	Yes	Yes	No
+P151	G4	4	4-Mar-03	5.17	lactating	18	-0.79	12-May-08	2008	189.88	Yes	Yes	No
+P152	G2	2	20-Jul-08	7.75	pregnant	NA	NA	22-Apr-16	2016	170.33	Yes	Yes	No
+P153	D4	4	4-Jan-92	8.5	lactating	15	-0.86	28-Jul-00	2000	65.75	Yes	Yes	No
+P154	D1	1	25-Jun-96	7.5	lactating	1	1.00	25-Dec-03	2003	22.00	Yes	Yes	No
+P155	D2	2	28-Jun-03	10	lactating	32	-0.31	10-Jul-13	2013	180.38	Yes	Yes	No
+P156	M1	1	1-Jan-83	10.92	lactating	1	1.00	29-Dec-93	1993	64.50	Yes	Yes	No
+P157	D3	3	7-Nov-92	13.08	lactating	14	-0.63	2-Jan-06	2006	27.00	Yes	Yes	No
+P158	D2	2	28-Jun-03	8.67	lactating	36	-0.37	8-Mar-12	2012	92.00	Yes	Yes	No
+P159	D3	3	7-Nov-92	13.17	lactating	14	-0.63	20-Jan-06	2006	37.75	Yes	Yes	No
+P16	D3	3	7-Nov-92	4.67	lactating	15	0.00	28-Jul-97	1997	184.00	Yes	Yes	No
+P160	G1	1	20-Mar-01	7.75	lactating	6	0.52	5-Jan-09	2009	3.00	Yes	Yes	No
+P161	D1	1	25-Jun-96	10.42	lactating	1	1.00	5-Dec-06	2006	21.80	Yes	Yes	No
+P162	G2	2	20-Jul-08	4.17	lactating	35	-0.33	27-Sep-12	2012	151.75	Yes	Yes	No
+P163	M4	4	1-Mar-87	6.33	lactating	9	0.20	31-Jul-93	1993	885.25	Yes	Yes	No
+P164	D2	2	28-Jun-03	2.92	nulliparous	12	-0.38	5-Jun-06	2006	122.33	Yes	Yes	No
+P165	D2	2	28-Jun-03	11.08	lactating	32	-0.37	19-Aug-14	2014	422.75	Yes	Yes	No
+P166	D3	3	7-Nov-92	15.17	lactating	16	-0.57	26-Jan-08	2008	64.40	Yes	Yes	No
+P167	D1	1	25-Jun-96	3.83	lactating	1	1.00	27-Apr-00	2000	63.00	Yes	Yes	Yes
+P169	D3	3	7-Nov-92	9.25	lactating	12	-0.29	1-Mar-02	2002	186.17	Yes	Yes	No
+P17	D1	1	25-Jun-96	4.5	other	1	1.00	27-Dec-00	2000	138.00	Yes	Yes	Yes
+P170	D4	4	4-Jan-92	5.33	lactating	21	-0.37	15-May-97	1997	101.25	Yes	Yes	No
+P171	D3	3	7-Nov-92	16.83	lactating	17	-0.52	8-Sep-09	2009	102.40	Yes	Yes	No
+P172	G2	2	20-Jul-08	4.5	lactating	31	-0.27	3-Feb-13	2013	111.33	Yes	Yes	No
+P173	G4	4	4-Mar-03	6.25	other	18	-0.61	21-Jun-09	2009	NA	No	No	No
+P174	G3	3	2-Mar-07	5.92	lactating	46	-0.91	27-Feb-13	2013	105.50	Yes	Yes	No
+P175	D3	3	7-Nov-92	16.75	lactating	17	-0.52	1-Sep-09	2009	153.00	Yes	Yes	No
+P176	D3	3	7-Nov-92	11.5	other	14	-0.73	13-May-04	2004	1.00	Yes	Yes	No
+P177	G4	4	4-Mar-03	8.25	lactating	34	-0.69	22-Jun-11	2011	61.33	Yes	Yes	No
+P178	G1	1	20-Mar-01	12.25	lactating	15	0.40	5-Jul-13	2013	180.38	Yes	Yes	Yes
+P179	G3	3	2-Mar-07	8.33	lactating	NA	NA	8-Jul-15	2015	255.00	Yes	Yes	Yes
+P18	M2	2	23-Jul-94	11.5	lactating	11	-0.25	21-Feb-06	2006	43.00	Yes	Yes	No
+P180	G4	4	4-Mar-03	9.25	lactating	45	-0.72	10-Jun-12	2012	64.00	Yes	Yes	No
+P181	M3	3	1-Feb-85	9.58	lactating	7	0.47	5-Sep-94	1994	346.50	Yes	Yes	No
+P182	D3	3	7-Nov-92	9.33	lactating	12	-0.29	30-Mar-02	2002	289.00	Yes	Yes	No
+P183	D3	3	7-Nov-92	19.83	other	43	-0.64	21-Sep-12	2012	156.00	Yes	Yes	No
+P184	M2	2	23-Jul-94	17.83	other	32	-0.21	10-Jun-12	2012	64.00	Yes	Yes	No
+P185	M3	3	1-Feb-85	8.25	lactating	5	0.60	2-May-93	1993	67.25	Yes	Yes	No
+P186	D3	3	7-Nov-92	8.08	lactating	10	-0.20	12-Dec-00	2000	191.75	Yes	Yes	Yes
+P187	M2	2	23-Jul-94	11.92	lactating	11	-0.25	8-Jul-06	2006	80.50	Yes	Yes	No
+P188	G4	4	4-Mar-03	8.42	pregnant	34	-0.69	1-Sep-11	2011	465.67	Yes	Yes	No
+P189	D3	3	7-Nov-92	14.92	lactating	12	-0.46	16-Oct-07	2007	533.83	Yes	Yes	No
+P19	G4	4	4-Mar-03	9	lactating	45	-0.72	25-Mar-12	2012	141.83	Yes	Yes	No
+P190	D3	3	7-Nov-92	7.75	pregnant	10	-0.20	24-Aug-00	2000	39.50	Yes	Yes	Yes
+P191	D3	3	7-Nov-92	7.83	pregnant	10	-0.20	25-Sep-00	2000	147.25	Yes	Yes	Yes
+P192	G4	4	4-Mar-03	11.58	other	40	-0.73	20-Oct-14	2014	125.67	Yes	Yes	No
+P193	G4	4	4-Mar-03	6.17	other	18	-0.61	29-May-09	2009	NA	No	No	No
+P194	D3	3	7-Nov-92	11.92	pregnant	14	-0.73	16-Oct-04	2004	77.17	Yes	Yes	No
+P195	G1	1	20-Mar-01	2.42	nulliparous	2	0.88	18-Sep-03	2003	279.00	Yes	Yes	No
+P196	G1	1	20-Mar-01	12.33	lactating	15	0.40	26-Jul-13	2013	313.50	Yes	Yes	Yes
+P197	D2	2	28-Jun-03	6.17	lactating	14	-0.23	2-Sep-09	2009	153.00	Yes	Yes	No
+P198	M4	4	1-Mar-87	10.58	pregnant	19	-0.28	16-Oct-97	1997	133.17	Yes	Yes	No
+P199	D1	1	25-Jun-96	2.75	lactating	2	0.93	19-Apr-99	1999	265.00	Yes	Yes	No
+P2	D3	3	7-Nov-92	4.33	lactating	15	0.00	17-Mar-97	1997	222.33	Yes	Yes	No
+P20	M3	3	1-Feb-85	9.08	lactating	7	0.47	23-Mar-94	1994	196.00	Yes	Yes	No
+P200	G2	2	20-Jul-08	4.83	lactating	31	-0.27	6-Jun-13	2013	434.00	Yes	Yes	No
+P201	D2	2	28-Jun-03	6.75	lactating	21	-0.42	16-Apr-10	2010	246.17	Yes	Yes	No
+P202	D1	1	25-Jun-96	9.92	lactating	1	1.00	18-Jun-06	2006	108.67	Yes	Yes	No
+P203	M4	4	1-Mar-87	7.75	pregnant	11	0.13	6-Dec-94	1994	161.75	Yes	Yes	No
+P204	M1	1	1-Jan-83	15.92	pregnant	1	1.00	5-Dec-98	1998	188.00	No	Yes	No
+P205	G4	4	4-Mar-03	11.08	lactating	40	-0.73	17-Apr-14	2014	89.80	Yes	Yes	No
+P206	M4	4	1-Mar-87	8.58	lactating	17	-0.10	27-Oct-95	1995	30.00	Yes	Yes	No
+P207	G1	1	20-Mar-01	4	lactating	4	0.66	30-Mar-05	2005	32.50	Yes	Yes	No
+P208	M1	1	1-Jan-83	11	lactating	1	1.00	13-Jan-94	1994	67.75	Yes	Yes	No
+P209	D2	2	28-Jun-03	3.92	lactating	10	-0.20	28-May-07	2007	266.50	Yes	Yes	No
+P21	M2	2	23-Jul-94	8.17	lactating	8	0.06	13-Oct-02	2002	17.00	Yes	Yes	No
+P210	D3	3	7-Nov-92	4.67	lactating	15	0.00	13-Jul-97	1997	193.25	No	Yes	No
+P211	M1	1	1-Jan-83	11.67	lactating	1	1.00	3-Sep-94	1994	346.50	Yes	Yes	No
+P212	G3	3	2-Mar-07	6.42	lactating	46	-0.91	13-Aug-13	2013	742.50	Yes	Yes	Yes
+P213	D1	1	25-Jun-96	8.25	lactating	1	1.00	21-Oct-04	2004	27.50	Yes	Yes	No
+P214	G1	1	20-Mar-01	3.5	lactating	2	0.87	5-Oct-04	2004	113.25	Yes	Yes	No
+P215	D4	4	4-Jan-92	14.42	lactating	16	-0.88	13-Jun-06	2006	122.33	Yes	Yes	No
+P216	G1	1	20-Mar-01	5	lactating	5	0.50	11-Apr-06	2006	210.67	Yes	Yes	No
+P217	D2	2	28-Jun-03	8.67	lactating	36	-0.37	12-Mar-12	2012	108.83	Yes	Yes	No
+P218	D3	3	7-Nov-92	5.67	lactating	16	-0.07	29-Jul-98	1998	184.25	Yes	Yes	No
+P219	M2	2	23-Jul-94	6.25	lactating	6	0.33	1-Nov-00	2000	77.75	Yes	Yes	No
+P22	D4	4	4-Jan-92	14	pregnant	16	-0.88	3-Feb-06	2006	47.67	Yes	Yes	No
+P220	M3	3	1-Feb-85	9.92	pregnant	11	0.31	29-Jan-95	1995	494.00	Yes	Yes	No
+P221	D3	3	7-Nov-92	7	lactating	17	-0.06	28-Nov-99	1999	39.50	Yes	Yes	No
+P222	M1	1	1-Jan-83	11.92	other	1	1.00	16-Dec-94	1994	234.00	Yes	Yes	No
+P223	G2	2	20-Jul-08	6.92	lactating	NA	NA	14-Jul-15	2015	247.33	Yes	Yes	No
+P224	D4	4	4-Jan-92	10.25	lactating	16	-1.00	28-Apr-02	2002	164.25	Yes	Yes	No
+P225	D1	1	25-Jun-96	5.42	lactating	1	1.00	26-Nov-01	2001	242.50	Yes	Yes	Yes
+P226	M2	2	23-Jul-94	15.83	lactating	18	-0.21	20-Jun-10	2010	312.38	Yes	Yes	No
+P227	D1	1	25-Jun-96	14.5	lactating	1	1.00	22-Jan-11	2011	115.83	Yes	Yes	No
+P228	D2	2	28-Jun-03	6.83	lactating	21	-0.42	20-May-10	2010	465.00	Yes	Yes	No
+P229	D4	4	4-Jan-92	4.92	lactating	21	-0.37	27-Dec-96	1996	226.75	Yes	Yes	No
+P23	D1	1	25-Jun-96	8.33	lactating	1	1.00	13-Nov-04	2004	86.25	Yes	Yes	No
+P230	G2	2	20-Jul-08	7.5	lactating	NA	NA	18-Feb-16	2016	221.83	Yes	Yes	No
+P231	D3	3	7-Nov-92	19.17	other	43	-0.64	11-Jan-12	2012	200.50	Yes	Yes	No
+P232	M2	2	23-Jul-94	10.58	lactating	11	-0.11	16-Mar-05	2005	23.00	Yes	Yes	No
+P233	D1	1	25-Jun-96	3.08	lactating	2	0.93	15-Aug-99	1999	225.25	Yes	Yes	No
+P234	D1	1	25-Jun-96	3.25	lactating	2	0.93	22-Oct-99	1999	17.00	Yes	Yes	No
+P235	M2	2	23-Jul-94	13	other	9	-0.06	16-Aug-07	2007	204.00	Yes	Yes	No
+P236	D3	3	7-Nov-92	4.75	lactating	15	0.00	5-Sep-97	1997	139.75	Yes	Yes	No
+P237	G1	1	20-Mar-01	11.67	other	17	0.37	2-Dec-12	2012	245.83	Yes	Yes	No
+P238	M3	3	1-Feb-85	9.83	lactating	7	0.47	5-Dec-94	1994	161.75	Yes	Yes	No
+P239	D1	1	25-Jun-96	7.58	other	1	1.00	1-Feb-04	2004	36.25	Yes	Yes	No
+P24	D2	2	28-Jun-03	13	lactating	NA	NA	3-Jul-16	2016	257.40	Yes	Yes	No
+P240	D3	3	7-Nov-92	7.92	lactating	10	-0.20	21-Oct-00	2000	66.75	Yes	Yes	No
+P241	G4	4	4-Mar-03	8.75	lactating	34	-0.69	4-Dec-11	2011	167.33	Yes	Yes	No
+P242	M4	4	1-Mar-87	10.92	other	19	-0.28	16-Feb-98	1998	117.25	Yes	Yes	No
+P243	M1	1	1-Jan-83	16.08	lactating	1	1.00	26-Feb-99	1999	76.00	Yes	Yes	No
+P244	M2	2	23-Jul-94	9.5	lactating	10	-0.20	27-Jan-04	2004	7.00	Yes	Yes	No
+P245	D3	3	7-Nov-92	2.5	nulliparous	13	0.17	26-May-95	1995	177.25	Yes	Yes	No
+P246	D3	3	7-Nov-92	8.83	lactating	12	-0.29	30-Sep-01	2001	131.00	Yes	Yes	No
+P247	G2	2	20-Jul-08	6.58	lactating	NA	NA	26-Feb-15	2015	126.33	Yes	Yes	No
+P248	G4	4	4-Mar-03	10	other	40	-0.65	7-Mar-13	2013	103.44	Yes	Yes	No
+P249	D4	4	4-Jan-92	9.92	lactating	18	-1.00	24-Dec-01	2001	117.00	Yes	Yes	No
+P25	G1	1	20-Mar-01	4.75	lactating	5	0.50	19-Jan-06	2006	37.75	Yes	Yes	No
+P250	M3	3	1-Feb-85	9.67	lactating	7	0.47	4-Oct-94	1994	65.75	Yes	Yes	No
+P251	D3	3	7-Nov-92	16.92	lactating	17	-0.52	15-Oct-09	2009	43.00	Yes	Yes	No
+P252	G3	3	2-Mar-07	8.75	lactating	NA	NA	31-Dec-15	2015	109.75	Yes	Yes	No
+P253	M2	2	23-Jul-94	14.83	lactating	12	-0.04	7-Jun-09	2009	NA	No	No	No
+P254	G1	1	20-Mar-01	9.58	lactating	10	0.35	8-Nov-10	2010	461.00	Yes	Yes	No
+P255	D3	3	7-Nov-92	9.25	lactating	12	-0.29	4-Mar-02	2002	156.50	Yes	Yes	No
+P256	D3	3	7-Nov-92	12.58	lactating	16	-0.66	25-Jun-05	2005	3.00	Yes	Yes	No
+P257	G1	1	20-Mar-01	5.5	pregnant	5	0.50	19-Oct-06	2006	23.00	Yes	Yes	No
+P258	M2	2	23-Jul-94	11.5	lactating	11	-0.25	3-Feb-06	2006	47.67	Yes	Yes	No
+P259	M2	2	23-Jul-94	15.17	lactating	12	-0.04	17-Oct-09	2009	43.00	Yes	Yes	No
+P26	M4	4	1-Mar-87	7.83	lactating	17	-0.10	29-Jan-95	1995	494.00	Yes	Yes	No
+P260	M4	4	1-Mar-87	6.92	lactating	11	0.13	4-Feb-94	1994	340.00	Yes	Yes	No
+P261	G3	3	2-Mar-07	7.75	lactating	45	-0.95	9-Dec-14	2014	136.00	Yes	Yes	Yes
+P262	M1	1	1-Jan-83	15.83	lactating	1	1.00	8-Nov-98	1998	282.50	Yes	Yes	No
+P263	M2	2	23-Jul-94	8.5	lactating	11	-0.25	5-Feb-03	2003	0.00	Yes	Yes	No
+P264	D1	1	25-Jun-96	7.25	lactating	1	1.00	23-Oct-03	2003	81.50	Yes	Yes	No
+P265	D3	3	7-Nov-92	7.5	lactating	10	-0.20	17-May-00	2000	132.25	Yes	Yes	Yes
+P266	D3	3	7-Nov-92	8.5	lactating	12	-0.29	26-May-01	2001	428.50	Yes	Yes	Yes
+P267	D1	1	25-Jun-96	11.08	other	1	1.00	27-Jul-07	2007	112.67	Yes	Yes	No
+P268	D1	1	25-Jun-96	3.42	other	2	0.93	20-Dec-99	1999	51.25	Yes	Yes	No
+P269	M2	2	23-Jul-94	9.25	lactating	11	-0.25	3-Nov-03	2003	365.75	Yes	Yes	No
+P27	G4	4	4-Mar-03	11.42	other	40	-0.73	4-Aug-14	2014	392.67	Yes	Yes	No
+P270	G1	1	20-Mar-01	9.58	lactating	10	0.35	24-Oct-10	2010	453.38	Yes	Yes	No
+P271	M4	4	1-Mar-87	6.33	lactating	9	0.20	28-Jul-93	1993	885.25	Yes	Yes	No
+P272	G1	1	20-Mar-01	7.67	lactating	6	0.47	30-Nov-08	2008	82.00	Yes	Yes	No
+P273	M4	4	1-Mar-87	7.75	pregnant	11	0.13	14-Dec-94	1994	161.75	Yes	Yes	No
+P274	M1	1	1-Jan-83	10.08	lactating	1	1.00	9-Feb-93	1993	230.50	Yes	Yes	No
+P275	G2	2	20-Jul-08	5.75	lactating	31	-0.33	18-May-14	2014	83.83	Yes	Yes	No
+P276	G1	1	20-Mar-01	13	other	16	0.33	20-Mar-14	2014	105.80	Yes	Yes	Yes
+P277	D4	4	4-Jan-92	8.08	lactating	15	-0.86	20-Feb-00	2000	92.75	Yes	Yes	No
+P278	G4	4	4-Mar-03	7.83	lactating	34	-0.69	11-Jan-11	2011	142.56	Yes	Yes	No
+P279	D4	4	4-Jan-92	12.92	lactating	16	-1.00	6-Dec-04	2004	21.50	Yes	Yes	No
+P28	G4	4	4-Mar-03	10.83	lactating	40	-0.73	23-Jan-14	2014	91.67	Yes	Yes	No
+P280	D2	2	28-Jun-03	3.92	lactating	10	-0.20	29-May-07	2007	245.86	Yes	Yes	No
+P281	M1	1	1-Jan-83	11.25	lactating	1	1.00	2-Apr-94	1994	118.25	Yes	Yes	No
+P282	M4	4	1-Mar-87	12.25	lactating	20	-0.26	10-Jun-99	1999	192.00	Yes	Yes	No
+P283	G3	3	2-Mar-07	3.83	lactating	39	-0.94	26-Jan-11	2011	83.33	Yes	Yes	No
+P284	G1	1	20-Mar-01	3.33	lactating	2	0.87	29-Jul-04	2004	59.25	Yes	Yes	No
+P285	G1	1	20-Mar-01	4.67	pregnant	4	0.66	24-Nov-05	2005	38.50	Yes	Yes	No
+P286	D2	2	28-Jun-03	8.42	lactating	29	-0.43	29-Nov-11	2011	168.25	Yes	Yes	No
+P287	G2	2	20-Jul-08	6.5	lactating	NA	NA	28-Jan-15	2015	95.60	Yes	Yes	No
+P288	G1	1	20-Mar-01	4.67	pregnant	4	0.66	15-Dec-05	2005	28.67	Yes	Yes	No
+P289	M3	3	1-Feb-85	8.92	lactating	7	0.47	14-Jan-94	1994	67.75	Yes	Yes	No
+P29	M2	2	23-Jul-94	7	other	7	0.29	20-Aug-01	2001	431.00	Yes	Yes	No
+P290	M1	1	1-Jan-83	12	pregnant	1	1.00	30-Jan-95	1995	494.00	Yes	Yes	No
+P291	G1	1	20-Mar-01	13.83	pregnant	NA	NA	21-Jan-15	2015	103.25	Yes	Yes	Yes
+P292	D2	2	28-Jun-03	10.17	lactating	32	-0.31	28-Aug-13	2013	539.83	Yes	Yes	No
+P293	M4	4	1-Mar-87	7.83	lactating	17	-0.10	26-Jan-95	1995	494.00	Yes	Yes	No
+P294	G1	1	20-Mar-01	13.25	other	16	0.33	25-Jun-14	2014	514.75	Yes	Yes	Yes
+P295	D1	1	25-Jun-96	3.5	other	1	1.00	6-Jan-00	2000	73.25	Yes	Yes	No
+P296	D4	4	4-Jan-92	8.25	lactating	15	-0.86	1-May-00	2000	88.67	Yes	Yes	No
+P297	G2	2	20-Jul-08	5.58	lactating	31	-0.33	21-Feb-14	2014	93.50	Yes	Yes	No
+P298	D4	4	4-Jan-92	2.67	pregnant	12	0.04	12-Sep-94	1994	346.50	Yes	Yes	No
+P299	M4	4	1-Mar-87	12.08	lactating	20	-0.26	23-Apr-99	1999	265.00	Yes	Yes	No
+P3	D1	1	25-Jun-96	3.17	lactating	2	0.93	15-Sep-99	1999	329.00	Yes	Yes	No
+P30	M3	3	1-Feb-85	9.5	lactating	7	0.47	16-Aug-94	1994	237.50	Yes	Yes	No
+P300	D1	1	25-Jun-96	3.25	lactating	2	0.93	26-Sep-99	1999	114.50	Yes	Yes	No
+P301	G3	3	2-Mar-07	7.67	lactating	45	-0.95	23-Nov-14	2014	95.20	Yes	Yes	Yes
+P302	D2	2	28-Jun-03	5.92	lactating	14	-0.23	30-May-09	2009	NA	No	No	No
+P303	M1	1	1-Jan-83	13.25	lactating	1	1.00	9-Apr-96	1996	370.50	Yes	Yes	No
+P304	D1	1	25-Jun-96	4.83	lactating	1	1.00	5-May-01	2001	256.75	Yes	Yes	Yes
+P31	D1	1	25-Jun-96	10.25	lactating	1	1.00	16-Oct-06	2006	46.83	Yes	Yes	No
+P32	M4	4	1-Mar-87	12.83	lactating	14	-0.88	11-Jan-00	2000	73.25	Yes	Yes	No
+P33	D3	3	7-Nov-92	13.17	lactating	14	-0.63	27-Jan-06	2006	37.75	Yes	Yes	No
+P34	D3	3	7-Nov-92	9.58	lactating	12	-0.29	19-Jun-02	2002	88.00	Yes	Yes	No
+P35	D3	3	7-Nov-92	7.92	lactating	10	-0.20	24-Oct-00	2000	66.75	Yes	Yes	No
+P36	D1	1	25-Jun-96	3.25	lactating	2	0.93	30-Sep-99	1999	114.50	Yes	Yes	No
+P37	M2	2	23-Jul-94	11.5	lactating	11	-0.25	9-Feb-06	2006	47.67	Yes	Yes	No
+P38	M2	2	23-Jul-94	3.67	nulliparous	12	0.21	22-Apr-98	1998	159.50	Yes	Yes	No
+P39	M2	2	23-Jul-94	10.42	lactating	11	-0.11	10-Jan-05	2005	53.50	Yes	Yes	No
+P4	G1	1	20-Mar-01	14.5	lactating	NA	NA	12-Oct-15	2015	31.67	Yes	Yes	Yes
+P40	D2	2	28-Jun-03	12.75	lactating	NA	NA	21-Apr-16	2016	170.33	Yes	Yes	No
+P41	D3	3	7-Nov-92	8.33	lactating	12	-0.29	12-Mar-01	2001	317.25	Yes	Yes	Yes
+P42	G4	4	4-Mar-03	8.17	lactating	34	-0.69	24-May-11	2011	106.44	Yes	Yes	No
+P43	G1	1	20-Mar-01	12.17	lactating	15	0.40	20-May-13	2013	251.29	Yes	Yes	No
+P44	D3	3	7-Nov-92	9.25	lactating	12	-0.29	23-Feb-02	2002	208.75	Yes	Yes	No
+P45	D3	3	7-Nov-92	4.08	lactating	14	0.10	21-Dec-96	1996	226.75	Yes	Yes	No
+P46	D1	1	25-Jun-96	4.92	lactating	1	1.00	26-May-01	2001	428.50	Yes	Yes	Yes
+P47	D1	1	25-Jun-96	3.5	pregnant	1	1.00	10-Jan-00	2000	73.25	Yes	Yes	Yes
+P48	D1	1	25-Jun-96	2.67	lactating	2	0.93	9-Mar-99	1999	42.75	Yes	Yes	No
+P49	D2	2	28-Jun-03	12.83	lactating	NA	NA	24-May-16	2016	119.33	Yes	Yes	No
+P5	D3	3	7-Nov-92	11.17	lactating	14	-0.73	15-Jan-04	2004	14.50	Yes	Yes	No
+P50	M2	2	23-Jul-94	3.25	nulliparous	11	0.28	2-Nov-97	1997	53.75	Yes	Yes	No
+P51	G1	1	20-Mar-01	2.92	lactating	2	0.87	21-Feb-04	2004	70.50	Yes	Yes	No
+P52	G2	2	20-Jul-08	2.83	nulliparous	28	-0.38	8-Jun-11	2011	102.44	Yes	Yes	No
+P53	D4	4	4-Jan-92	9.25	lactating	18	-1.00	16-Apr-01	2001	257.75	Yes	Yes	No
+P54	D4	4	4-Jan-92	11.33	lactating	17	-1.00	25-May-03	2003	31.25	Yes	Yes	No
+P55	D4	4	4-Jan-92	14	pregnant	16	-0.88	24-Jan-06	2006	37.75	Yes	Yes	No
+P56	M1	1	1-Jan-83	13.42	pregnant	1	1.00	19-Jun-96	1996	1094.00	Yes	Yes	No
+P57	D3	3	7-Nov-92	10.75	lactating	15	-0.75	2-Sep-03	2003	280.00	Yes	Yes	No
+P58	M3	3	1-Feb-85	9	lactating	7	0.47	14-Feb-94	1994	340.00	Yes	Yes	No
+P59	M2	2	23-Jul-94	11.67	lactating	11	-0.25	10-Apr-06	2006	210.67	Yes	Yes	No
+P6	D3	3	7-Nov-92	11.08	lactating	15	-0.75	25-Dec-03	2003	22.00	Yes	Yes	No
+P60	D2	2	28-Jun-03	7.67	other	29	-0.43	27-Mar-11	2011	171.00	Yes	Yes	No
+P61	G1	1	20-Mar-01	7.42	lactating	6	0.47	18-Sep-08	2008	412.00	Yes	Yes	No
+P62	G1	1	20-Mar-01	3.83	lactating	4	0.66	5-Feb-05	2005	43.25	Yes	Yes	No
+P63	G2	2	20-Jul-08	3.42	other	28	-0.38	23-Dec-11	2011	176.11	Yes	Yes	No
+P64	M3	3	1-Feb-85	9.42	lactating	7	0.47	8-Jul-94	1994	312.50	Yes	Yes	No
+P65	M2	2	23-Jul-94	6.83	lactating	7	0.29	11-Jun-01	2001	445.50	Yes	Yes	No
+P66	D1	1	25-Jun-96	9.92	lactating	1	1.00	5-Jun-06	2006	122.33	Yes	Yes	No
+P67	M1	1	1-Jan-83	14.25	lactating	1	1.00	26-Apr-97	1997	98.25	Yes	Yes	No
+P68	D2	2	28-Jun-03	2.75	nulliparous	12	-0.38	2-Apr-06	2006	210.67	Yes	Yes	No
+P69	D2	2	28-Jun-03	11.33	lactating	32	-0.37	13-Nov-14	2014	80.33	Yes	Yes	No
+P7	G2	2	20-Jul-08	6.42	pregnant	NA	NA	16-Jan-15	2015	73.33	Yes	Yes	No
+P70	G1	1	20-Mar-01	4.75	pregnant	4	0.66	26-Dec-05	2005	28.00	Yes	Yes	No
+P71	M2	2	23-Jul-94	11.42	lactating	11	-0.25	2-Jan-06	2006	27.00	Yes	Yes	No
+P72	M3	3	1-Feb-85	9.17	lactating	7	0.47	30-Apr-94	1994	267.25	Yes	Yes	No
+P73	D4	4	4-Jan-92	3	lactating	18	-0.17	3-Feb-95	1995	404.75	Yes	Yes	No
+P74	G1	1	20-Mar-01	12.83	other	16	0.33	24-Jan-14	2014	91.67	Yes	Yes	Yes
+P75	D3	3	7-Nov-92	8.25	lactating	12	-0.29	21-Feb-01	2001	242.25	Yes	Yes	Yes
+P76	G3	3	2-Mar-07	3.83	lactating	39	-0.94	11-Jan-11	2011	142.56	Yes	Yes	No
+P77	D2	2	28-Jun-03	9.75	lactating	32	-0.31	26-Apr-13	2013	131.33	Yes	Yes	No
+P78	D3	3	7-Nov-92	18.83	other	32	-0.58	1-Oct-11	2011	70.17	Yes	Yes	No
+P79	D2	2	28-Jun-03	7.25	lactating	21	-0.42	21-Oct-10	2010	577.67	Yes	Yes	No
+P8	G3	3	2-Mar-07	4.25	lactating	39	-0.94	22-Jun-11	2011	61.33	Yes	Yes	No
+P80	M2	2	23-Jul-94	11.58	lactating	11	-0.25	7-Mar-06	2006	42.33	Yes	Yes	No
+P81	D1	1	25-Jun-96	10	lactating	1	1.00	2-Jul-06	2006	80.50	Yes	Yes	No
+P82	G1	1	20-Mar-01	14.25	lactating	NA	NA	10-Jul-15	2015	255.00	Yes	Yes	Yes
+P83	M2	2	23-Jul-94	12.08	lactating	11	-0.25	18-Sep-06	2006	80.67	Yes	Yes	No
+P84	G3	3	2-Mar-07	7.08	lactating	45	-0.95	26-Apr-14	2014	93.67	Yes	Yes	Yes
+P85	M2	2	23-Jul-94	17.08	other	25	-0.23	15-Sep-11	2011	64.33	Yes	Yes	No
+P86	D4	4	4-Jan-92	4.08	lactating	21	-0.37	1-Mar-96	1996	271.67	Yes	Yes	No
+P87	G2	2	20-Jul-08	6.33	pregnant	31	-0.33	13-Dec-14	2014	136.00	Yes	Yes	No
+P88	M2	2	23-Jul-94	7.25	pregnant	7	0.29	19-Nov-01	2001	242.50	Yes	Yes	No
+P89	M2	2	23-Jul-94	4.92	lactating	10	0.40	18-Jul-99	1999	235.50	Yes	Yes	No
+P9	D3	3	7-Nov-92	8.08	lactating	10	-0.20	31-Dec-00	2000	138.00	Yes	Yes	Yes
+P90	D3	3	7-Nov-92	12.5	lactating	16	-0.66	11-May-05	2005	24.67	Yes	Yes	No
+P91	M2	2	23-Jul-94	7.25	pregnant	7	0.29	9-Nov-01	2001	183.50	Yes	Yes	No
+P92	M3	3	1-Feb-85	10	pregnant	11	0.31	13-Feb-95	1995	404.75	Yes	Yes	No
+P93	G3	3	2-Mar-07	4.33	lactating	39	-0.94	9-Jul-11	2011	442.50	Yes	Yes	No
+P94	D4	4	4-Jan-92	8	lactating	15	-0.86	31-Jan-00	2000	108.50	Yes	Yes	No
+P95	D1	1	25-Jun-96	9.75	lactating	1	1.00	26-Mar-06	2006	98.67	Yes	Yes	No
+P96	G4	4	4-Mar-03	10.83	lactating	40	-0.73	8-Jan-14	2014	81.83	Yes	Yes	No
+P98	G2	2	20-Jul-08	5.67	lactating	31	-0.33	10-Apr-14	2014	91.17	Yes	Yes	No
+P99	M2	2	23-Jul-94	11.75	lactating	11	-0.25	14-May-06	2006	179.83	Yes	Yes	No
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													

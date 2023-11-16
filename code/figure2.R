@@ -78,6 +78,17 @@ zymo_homo_accuracy / 100 / (bacterial_archaeal_ground_truth_bp / sim_zymo_spiked
 zymo_arabidopsis_accuracy / 100 / (bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_arabidopsis_bp_total) 
 zymo_plasmodium_accuracy / 100 / (bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_plasmodium_bp_total)
 
+#accuracy (total bact/arch)
+zymo$read_fraction
+(bacterial_archaeal_ground_truth_bp / sim_zymo_bp) * 100
+zymo_homo$read_fraction
+(bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_homo_bp_total) * 100
+zymo_arabidopsis$read_fraction
+(bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_arabidopsis_bp_total) * 100
+zymo_plasmodium$read_fraction
+(bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_plasmodium_bp_total) * 100
+
+
 fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
   ggplot(aes(x = "+ homo \nDNA", 
              y = zymo_homo_accuracy,
