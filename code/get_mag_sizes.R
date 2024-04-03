@@ -43,14 +43,14 @@ write_delim(combined, "data/pipe/real_data/hyena/hyena_mag_genome_sizes.tsv", de
 ### BASH code
 #cut -f1 hyena_mag_genome_sizes.tsv | sed '1d;' > hyena_ranks.tsv
 #grep -vwf hyena_ranks.tsv r214_gtdb_mean_genome_sizes.tsv > sans_hyena_ranks.tsv
-#sed '1d;' hyena_mag_genome_sizes.tsv > hyena_mag_genome_sizes_no_header.tsv
+#sed '1d;' hyena_mag_genome_sizes.tsv | cut -f1,2 > hyena_mag_genome_sizes_no_header.tsv
 #cat sans_hyena_ranks.tsv hyena_mag_genome_sizes_no_header.tsv > r214_hyena_mag_sizes.tsv
 
 
 
 ## Comparison of values when MAG sizes are used
 read_fraction_files_magsizes <- list.files("data/pipe/real_data/hyena/r214_magsizes/",
-                                  pattern = "*_read_fraction.tsv",
+                                  pattern = "*_read_fraction.tsv.gz",
                                   full.names = TRUE
 )
 
@@ -83,18 +83,7 @@ comparison %>%
     axis.text.x = element_text(size = 14, angle = 90)
   )
 
-comparison %>%
-  ggplot(aes(x = database, y = read_fraction_full, colour = database)) +
-  geom_boxplot() +
-  geom_point(size = 4) +
-  theme_classic() +
-  geom_hline(yintercept = 1.0) +
-  theme(
-    axis.title.x = element_blank(),
-    axis.title.y = element_text(size = 18),
-    axis.text.y = element_text(size = 16),
-    axis.text.x = element_text(size = 14)
-  )
+ggsave("figures/SI_figure1.png")
 
 ##############
 ## SI figure X

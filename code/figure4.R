@@ -1,111 +1,405 @@
 ################################################################################
-## Script to reproduce figure 4. 
-## Raphael Eisenhofer Sept 2023
+### R code for reproducing figure 4.
+### Raphael Eisenhofer 29/9/2023
 ################################################################################
 
-## load libraries/functions
+
+## Load packages + data
 library(tidyverse)
+library(janitor)
 library(patchwork)
+library(gghighlight)
 
-#Hyena metada
-hyena_md <- read_delim("data/msystems.00965-22-s0008.txt") %>%
-  unite("sample", hyenaID:sampleID, sep = "_")
+# Curated metadata from https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001792#sec012
+curated_metadata <- read_delim("data/sra/curated_metadata.tsv.gz")
+aamd <- read_delim("data/sra/hmgdb_selected_dataset_all_col_20231009_135657.csv.gz")
+mmdb <- read_delim("data/sra/marmdb_selected_dataset_all_col_20231103_134849.csv.gz")
+acc_organism <- read_delim("data/sra/acc_organism.csv.gz")
+ncbi_method <- read_delim("data/sra/NCBI_method_taxonomy_processed.csv.gz")
+meta_data_extra <- read_delim("data/sra/extra_metadata_short.tsv.gz") %>%
+  clean_names()
+singlem_method <- read_delim("data/sra/sra126_r214_mach2.condense.read_fraction6.in_sandpiper.csv.gz",
+                             col_names = c("acc", "estimated_bases", "total_bases", "singlem_percent", "warning")) %>%
+  mutate(singlem_percent = as.numeric(sub("%", "", singlem_percent))) %>%
+  inner_join(., meta_data_extra, by = join_by(acc == run))
 
-read_fraction_files <- list.files("data/pipe/real_data/hyena/r214/",
-                                  pattern = "*_read_fraction.tsv",
-                                  full.names = TRUE
+
+#Load and filter datasets
+merged <- acc_organism %>%
+  inner_join(., ncbi_method, by = "acc") %>%
+  inner_join(., singlem_method, by = "acc") %>%
+  clean_names() %>%
+  mutate(ncbi_stat = microbial_fraction * 100)
+
+#filter only WGS, RANDOM selection, and samples with > 0.5 Gbp
+merged_filtered <- merged %>%
+  filter(library_strategy == "WGS" & library_selection == "RANDOM") %>%
+  filter(gbp > 0.5) %>%
+  filter(!is.na(ncbi_stat))
+
+#Combine with human faecal curated metadata
+merged_curated <- acc_organism %>%
+  inner_join(., ncbi_method, by = "acc") %>%
+  inner_join(., singlem_method, by = "acc") %>%
+  inner_join(., curated_metadata, by = c("acc" = "run_accession")) %>%
+  clean_names() %>%
+  filter(library_strategy == "WGS" & library_selection == "RANDOM") %>%
+  filter(gbp > 0.5) %>%
+  mutate(ncbi_stat = microbial_fraction * 100) %>%
+  filter(!is.na(ncbi_stat))
+
+#Combine with animal metagenome curated metadata
+aamd_curated <- acc_organism %>%
+  inner_join(., ncbi_method, by = "acc") %>%
+  inner_join(., singlem_method, by = "acc") %>%
+  inner_join(., aamd, by = c("acc" = "library_id")) %>%
+  clean_names() %>%
+  filter(library_strategy == "WGS" & library_selection == "RANDOM") %>%
+  mutate(ncbi_stat = microbial_fraction * 100) %>%
+  filter(gbp > 0.5) %>%
+  filter(!is.na(ncbi_stat))
+
+#Combine with curated marine metagenome metadata
+marine_curated <- acc_organism %>%
+  inner_join(., ncbi_method, by = "acc") %>%
+  inner_join(., singlem_method, by = "acc") %>%
+  inner_join(., mmdb, by = c("acc" = "library_id")) %>%
+  clean_names() %>%
+  filter(gbp > 0.5) %>%
+  mutate(ncbi_stat = microbial_fraction * 100) %>%
+  filter(!is.na(ncbi_stat))
+
+# Number of different sample types
+merged_filtered %>%
+  group_by(organism) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+
+## number of SingleM warnings
+merged_filtered %>%
+  summarise(n = n(), .by = warning)
+
+
+################################################################################
+## Plots
+################################################################################
+
+# Create common theme
+theme_RE <- theme(
+  axis.text = element_text(size = 14),
+  axis.title = element_text(size = 14),
 )
 
-MAG_mapping_files <- list.files("data/pipe/real_data/hyena/",
-                                pattern = "*mapping_rate.txt",
-                                full.names = TRUE
-)
-
-assembly_mapping_files <- list.files("data/pipe/real_data/hyena/",
-                                     pattern = "*summary.tsv",
-                                     full.names = TRUE
-)
-
-assembly_mapping_rates <- map_dfr(assembly_mapping_files, read_delim) %>%
-  select(sample, assembly_mapping_percent) %>%
-  mutate(sample = str_replace_all(sample, "_M", ""))
-
-
-MAG_mapping_rates <- map_dfr(MAG_mapping_files, read_delim) %>%
-  filter(Genome == "unmapped") %>%
-  pivot_longer(., !Genome,
-               names_to = "sample",
-               values_to = "percent_unmapped",
-               values_drop_na = TRUE
-  ) %>%
-  select(!Genome) %>%
-  mutate(
-    sample = str_replace_all(sample, "_M Relative Abundance \\(%\\)", ""),
-    percent_mapped_MAGs = 100 - percent_unmapped,
-    ) %>%
-  rename("percent_unmapped_MAGs" = percent_unmapped)
-
-estimates <- map_dfr(read_fraction_files, read_delim) %>%
-  mutate(sample = str_replace_all(sample, "_M_1", "")) %>%
-  left_join(., MAG_mapping_rates, by = "sample") %>%
-  left_join(., assembly_mapping_rates, by = "sample") %>%
-  mutate(
-    dataset = case_when(
-      str_detect(sample, "D1_") ~ "hyena_D1",
-      str_detect(sample, "D3_") ~ "hyena_D3",
-      str_detect(sample, "G1_") ~ "hyena_G1",
-      str_detect(sample, "G3_") ~ "hyena_G3"
-    ),
-    read_fraction_full = bacterial_archaeal_bases / metagenome_size * 100
-  )
-
-
-#Plotting
-colours_hyenas <- c("hyena_D1" = "#ffffcc", "hyena_D3" = "#a1dab4", "hyena_G1" = "#41b6c4", "hyena_G3" = "#225ea8")
-
-fig4a <- estimates %>%
-  ggplot(aes(x = assembly_mapping_percent, y = read_fraction_full, fill = dataset)) +
-  geom_point(size = 5, alpha = 0.8, shape = 21, stroke = 0.5) +
-  geom_abline(intercept = 0, slope = 1) +
-  scale_x_continuous(limits = c(0, 120)) +
-  scale_y_continuous(limits = c(0, 120)) +
-  scale_color_manual(values = colours_hyenas) +
+################################################################################
+# All data
+################################################################################
+fig4a <- merged_filtered %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
+  geom_abline(linewidth = 1) +
+  geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
+  geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
+  geom_point(size = 0.3, alpha = 0.2) +
+  coord_cartesian(expand = FALSE) +
   theme_minimal() +
-  theme(
-    legend.position = "none",
-    axis.text = element_text(size = 16),
-    axis.title.x = element_text(size = 16),
-    axis.title.y = element_text(size = 16),
-  ) +
-  labs(y = "SingleM microbial fraction (%)", x = "Percent mapping to assembly (%)") +
-  ggtitle("Assemblies")
+  theme_RE +
+  theme(axis.title.x = element_blank()) +
+  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  ggtitle("All samples")
 
-fig4b <- estimates %>%
-  ggplot(aes(x = percent_mapped_MAGs, y = read_fraction_full, fill = dataset)) +
-  geom_point(size = 5, alpha = 0.8, shape = 21, stroke = 0.5) +
-  geom_abline(intercept = 0, slope = 1) +
-  scale_x_continuous(limits = c(0, 120)) +
-  scale_y_continuous(limits = c(0, 120)) +
-  scale_color_manual(values = colours_hyenas) +
+################################################################################
+# Misc STAT vs SingleM stats
+################################################################################
+
+## % of time where SingleM estimates are +- 5% of NCBI STAT:
+merged_filtered %>%
+  filter(singlem_percent - ncbi_stat <= 5 & ncbi_stat - singlem_percent <= 5) %>%
+  select(singlem_percent, ncbi_stat) %>%
+  nrow() / nrow(merged_filtered)
+
+## % of instances where SingleM estimate > NCBI STAT (by at least 5%):
+merged_filtered %>%
+  filter(singlem_percent - ncbi_stat >= 5) %>%
+  nrow() / nrow(merged_filtered)
+
+## % of instances where singlem 2X> ncbi_stat
+merged_filtered %>%
+  filter(singlem_percent > (ncbi_stat * 2) ) %>%
+  nrow() / nrow(merged_filtered)
+
+## converse, instances where NCBI STAT > SingleM estimates:
+merged_filtered %>%
+  filter(ncbi_stat > (singlem_percent * 2)) %>%
+  nrow() / nrow(merged_filtered)
+
+
+##odd
+ncbi_winners <- merged_filtered %>%
+  filter(ncbi_stat > (singlem_percent * 2))
+
+list <- ncbi_winners %>%
+  summarise(n = n(), perc = n()/nrow(ncbi_winners), .by = organism)
+
+ncbi_winners %>%
+  ggplot(aes(x = singlem_percent)) +
+  geom_density() +
+  ggtitle("Density of the ~9,000 metagenomes where STAT >2x SingleM")
+
+a<-ncbi_winners %>%
+  ggplot(aes(x = ncbi_stat, y = singlem_percent)) +
+  geom_point(size = 0.5, alpha = 0.4)
+
+b<-ncbi_winners %>%
+  ggplot(aes(x = ncbi_stat)) +
+  geom_boxplot() +
+  theme_void()
+
+a/b
+
+#get accessions 
+write_tsv(as_tibble(ncbi_greater2$acc), "data/sra/accessions_for_kingfisher.tsv")
+
+
+################################################################################
+# Human gut
+################################################################################
+
+# N of samples
+merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  nrow()
+
+# all stats
+merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(median = median(singlem_percent),
+            mean = mean(singlem_percent),
+            sd = sd(singlem_percent),
+            median_ncbi = median(ncbi_stat),
+            mean_ncbi = mean(ncbi_stat),
+            sd_ncbi = sd(ncbi_stat))
+
+
+#african / south american stats
+merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(continent == "Africa" | continent == "South America") %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(median = median(singlem_percent),
+            mean = mean(singlem_percent),
+            sd = sd(singlem_percent),
+            median_ncbi = median(ncbi_stat),
+            mean_ncbi = mean(ncbi_stat),
+            sd_ncbi = sd(ncbi_stat),
+            .by = continent)
+
+#Mann whitney tests
+merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(continent == "Africa") %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(wilcox = wilcox.test(singlem_percent, ncbi_stat)$p.value)
+
+merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(continent == "South America") %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(wilcox = wilcox.test(singlem_percent, ncbi_stat)$p.value)
+
+
+# All human
+fig4b <- merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
+  geom_abline(linewidth = 1) +
+  geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
+  geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
+  geom_point(size = 0.5, alpha = 0.5) +
+  coord_cartesian(expand = FALSE) +
   theme_minimal() +
+  theme_RE +
+  theme(axis.title = element_blank()) +
+  guides(colour = guide_legend(override.aes = list(size=6))) +
+  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  ggtitle("Human gut metagenomes")
+
+
+# Just african / SAmerican samples
+fig4c <- merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(continent == "Africa" | continent == "South America") %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat, colour = continent)) +
+  geom_abline(linewidth = 1) +
+  geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
+  geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
+  geom_point(size = 1, alpha = 0.5) +
+  scale_colour_manual(values = c("Africa" = "blue", "South America" = "darkgreen")) +
+  coord_cartesian(expand = FALSE) +
+  theme_minimal() +
+  theme_RE +
   theme(
-    legend.position = "top",
-    axis.text = element_text(size = 16),
-    axis.title.x = element_text(size = 16),
-    axis.title.y = element_text(size = 16),
+    legend.position = c(0.80, 0.25),
+    legend.title = element_text(size = 16),
+    legend.text = element_text(size = 16),
+    axis.title.x = element_blank()
   ) +
-  labs(y = "SingleM microbial fraction (%)", x = "Percent mapping to de novo MAGs (%)") +
-  ggtitle("MAG catalogue")
+  guides(colour = guide_legend(override.aes = list(size=6))) +
+  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  ggtitle("African/South American gut metagenomes")
 
-combined_hyenas <- fig4a | fig4b + plot_layout(guides = "collect") &
-  theme(
-    legend.position = "top",
-    legend.title = element_blank(),
-    legend.text = element_text(size = 14),
-    title = element_text(size = 18, face = "bold")
-  )
 
-fig4 <- combined_hyenas + plot_annotation(tag_levels = "A") &
-  theme(plot.tag = element_text(size = 20, face = "bold"))
+################################################################################
+# Animal metagenomes
+################################################################################
 
-ggsave("figures/Figure_4.png", fig5, width = 15, height = 7.5, unit = "in")
+# aamd mean stats
+aamd_curated %>%
+  summarise(n = n(), 
+            median = median(singlem_percent),
+            mean = mean(singlem_percent),
+            sd = sd(singlem_percent),
+            median_ncbi = median(ncbi_stat),
+            mean_ncbi = mean(ncbi_stat),
+            sd_ncbi = sd(ncbi_stat)
+            )
+
+# aamd stats by taxon
+aamd_taxon <- aamd_curated %>%
+  summarise(n = n(), 
+            median = median(singlem_percent),
+            mean = mean(singlem_percent),
+            sd = sd(singlem_percent),
+            median_ncbi = median(ncbi_stat),
+            mean_ncbi = mean(ncbi_stat),
+            sd_ncbi = sd(ncbi_stat),
+            .by = taxon_name)
+
+
+#AAMDB
+fig4d <- aamd_curated %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
+  geom_abline(linewidth = 1) +
+  geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
+  geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
+  geom_point(size = 1, alpha = 0.3) +
+  theme_minimal() +
+  theme_RE +
+  coord_cartesian(expand = FALSE) +
+  theme(axis.title = element_blank()) +
+  ggtitle("Non-human animal metagenomes")
+
+#stats
+aamd_curated %>%
+  summarise(mean_singlem = mean(singlem_percent, na.rm = T),
+            sd_singlem = sd(singlem_percent, na.rm = T),
+            mean_ncbi = mean(ncbi_stat, na.rm = T),
+            sd_ncbi = sd(ncbi_stat, na.rm = T))
+
+################################################################################
+# Marine metagenome samples
+################################################################################
+
+fig4e <- marine_curated %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
+  geom_abline(linewidth = 1) +
+  geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
+  geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
+  geom_point(size = 1, alpha = 0.3) +
+  theme_minimal() +
+  theme_RE +
+  coord_cartesian(expand = FALSE) +
+  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  ggtitle("Marine metagenomes")
+
+
+# Supplementary figure X
+# % mapping to catalogue vs singlem estimate for samples from Nishimura & Yoshizawa 2022
+# https://www.nature.com/articles/s41597-022-01392-5 [table S1]
+nishi_mapping <- readxl::read_xlsx("data/Nishimura_2022_SI_1.xlsx", skip = 2)
+
+prok <- nishi_mapping %>%
+  filter(fraction == "prok enriched")
+
+nishi_merged <- marine_curated %>%
+  inner_join(., prok, by = join_by(sample_id == sra_sample)) %>%
+  select(sample_id, acc, sra_run, singlem_percent, percent_mapped_on_UGCMP, percent_mapped_on_OceanDNA_MAGs, ncbi_stat) %>%
+  mutate(percent_mapped_on_OceanDNA_MAGs = as.numeric(percent_mapped_on_OceanDNA_MAGs),
+         percent_mapped_on_UGCMP = as.numeric(percent_mapped_on_UGCMP)) %>%
+  rename(UGCMP = percent_mapped_on_UGCMP,
+         OceanDNA = percent_mapped_on_OceanDNA_MAGs,
+         SMF = singlem_percent,
+         `NCBI STAT` = ncbi_stat)
+
+nishi_merged %>%
+  pivot_longer(., cols = c(SMF, `NCBI STAT`, UGCMP, OceanDNA),
+               values_to = "percent") %>%
+  ggplot(aes(x = fct_relevel(name, "SMF", "UGCMP", "OceanDNA", "STAT"), 
+             y = percent, 
+             group = name, 
+             colour = name)) +
+  geom_boxplot() +
+  geom_jitter(height = 0, width = 0.3, alpha = 0.2) +
+  theme_classic() + 
+  theme(legend.position = 0,
+        axis.text = element_text(size = 16),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 20)) +
+  ylab("Percentage (%)")
+  
+
+# calculate DAMR for nishi et al
+nishi_merged %>%
+  summarise(DAMR = mean(UGCMP / SMF), DAMR_sd = sd(UGCMP / SMF))
+
+
+marine_curated %>%
+  inner_join(., prok, by = join_by(sample_id == sra_sample)) %>%
+  select(sample_id, acc, sra_run, singlem_percent, percent_mapped_on_UGCMP, percent_mapped_on_OceanDNA_MAGs) %>%
+  ggplot(aes(x = as.numeric(percent_mapped_on_UGCMP), y = singlem_percent)) +
+  geom_point() +
+  scale_x_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_minimal()
+
+################################################################################
+# Soil metagenomes
+################################################################################
+fig4f <- merged_filtered %>%
+  filter(organism == "soil metagenome") %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
+  geom_abline(linewidth = 1) +
+  geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
+  geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
+  geom_point(size = 0.75, alpha = 0.5) +
+  coord_cartesian(expand = FALSE) +
+  theme_minimal() +
+  theme_RE +
+  theme(axis.title.y = element_blank()) +
+  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  ggtitle("Soil metagenomes")
+
+
+# check out odd 'arm' in figure
+merged_filtered %>%
+  filter(organism == "soil metagenome") %>%
+  filter(singlem_percent < 50 & ncbi_stat > 25) %>%
+  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
+  geom_point() +
+  scale_x_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100))
+
+# PRJNA554847 (46 samples????) & PRJNA671703 account for 85% of this 'arm'
+merged_filtered %>%
+  filter(organism == "soil metagenome") %>%
+  filter(singlem_percent < 50 & ncbi_stat > 25) %>%
+  filter(bioproject_x == "PRJNA554847" | bioproject_x == "PRJNA671703") %>%
+  nrow()
+
+################################################################################
+# Create composite figure 4
+################################################################################
+Figure_4 <- fig4a + fig4b + fig4c + fig4d + fig4e + fig4f + plot_layout(ncol = 2) + plot_annotation(tag_levels = "A")
+
+ggsave("figures/Figure_4.png", Figure_4, width = 10, height = 15, unit = "in")
+
+

@@ -1,6 +1,6 @@
 ################################################################################
 ## Script to reproduce figure 2. 
-## Raphael Eisenhofer Sept 2023
+## Raphael Eisenhofer / Ben Woodcroft Nov 2023
 ################################################################################
 
 ## load libraries/functions
@@ -9,7 +9,7 @@ library(patchwork)
 
 ### Simulated zymo mock communities with spiked eukaryotic DNA
 
-## Total size of the spiked simulated zymo metagenomes?
+## Total size of the spiked simulated zymo metagenomes (base pairs)?
 sim_zymo_spiked_homo_bp_total <- 757352700 * 2
 sim_zymo_spiked_arabidopsis_bp_total <- 486523650 * 2
 sim_zymo_spiked_plasmodium_bp_total <- 245668650 * 2
@@ -65,11 +65,11 @@ fig2Aa <- as.data.frame(zymo_accuracy) %>%
     legend.position = "none",
     title = element_text(size = 16, face = "bold"),
     axis.title.x = element_blank(),
-    axis.title.y = element_text(size = 16),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 12),
+    axis.title.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
+    axis.text.y = element_text(size = 15),
   ) +
-  ylab("Microbial read fraction (%)") +
+  ylab("SingleM microbial fraction (%)") +
   ggtitle("A)") 
 
 #accuracy:
@@ -90,7 +90,7 @@ zymo_plasmodium$read_fraction
 
 
 fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
-  ggplot(aes(x = "+ homo \nDNA", 
+  ggplot(aes(x = "+ homo \nreads", 
              y = zymo_homo_accuracy,
              fill = "#e2f0d9")) +
   geom_bar(stat = "identity") +
@@ -102,13 +102,13 @@ fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 12),
+    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
 
 fig2Ac <- as.data.frame(zymo_plasmodium_accuracy) %>%
-  ggplot(aes(x = "+ plasmodium \nDNA", 
+  ggplot(aes(x = "+ plasmodium \nreads", 
              y = zymo_plasmodium_accuracy,
              fill = "#00bfc4")) +
   geom_bar(stat = "identity") +
@@ -120,13 +120,13 @@ fig2Ac <- as.data.frame(zymo_plasmodium_accuracy) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 12),
+    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
 
 fig2Ad <- as.data.frame(zymo_arabidopsis_accuracy) %>%
-  ggplot(aes(x = "+ arabidopsis \nDNA", 
+  ggplot(aes(x = "+ arabidopsis \nreads", 
              y = zymo_arabidopsis_accuracy,
              fill = "#51a145")) +
   geom_bar(stat = "identity") +
@@ -138,7 +138,7 @@ fig2Ad <- as.data.frame(zymo_arabidopsis_accuracy) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 12),
+    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
@@ -159,6 +159,8 @@ marine0_groundtruth_bacteria_bp <- marine0_groundtruth_bp - marine0_groundtruth_
 smadness0_groundtruth_bp <- 998253450 * 2
 marine_0_accuracy <- (cami_marine$bacterial_archaeal_bases / marine0_groundtruth_bacteria_bp) * 100
 smadness_0_accuracy <- (cami_strain$bacterial_archaeal_bases / smadness0_groundtruth_bp) * 100
+cami_marine$bacterial_archaeal_bases / marine0_groundtruth_bp
+marine0_groundtruth_bacteria_bp / marine0_groundtruth_bp
 
 cami <- tibble(
   "marine" = marine_0_accuracy,
@@ -170,27 +172,78 @@ cami <- tibble(
 
 #Plot it
 
-fig2B <- cami %>%
+fig2Bi <- cami %>%
+  filter(metagenome == "marine") %>%
+  ggplot(aes(x = metagenome, 
+             y = percentage,
+             fill = metagenome)) +
+  geom_bar(stat = "identity") +
+  geom_hline(yintercept = 97.7) +
+  scale_y_continuous(limits = c(0, 100)) +
+  scale_fill_manual(values = c("darkblue")) +
+  theme_classic() + 
+  theme(
+    legend.position = "none",
+    title = element_text(size = 15, face = "bold"),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
+    axis.text.y = element_text(size = 15),
+  ) +
+  ggtitle("B)")
+
+fig2Bii <- cami %>%
+  filter(metagenome == "strain") %>%
   ggplot(aes(x = metagenome, 
              y = percentage,
              fill = metagenome)) +
   geom_bar(stat = "identity") +
   geom_hline(yintercept = 100) +
   scale_y_continuous(limits = c(0, 100)) +
-  scale_fill_manual(values = c("darkblue", "black")) +
+  scale_fill_manual(values = c("black")) +
   theme_classic() + 
   theme(
     legend.position = "none",
-    title = element_text(size = 16, face = "bold"),
+    title = element_text(size = 15, face = "bold"),
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 12, angle = 45, vjust = 0.5),
-    axis.text.y = element_text(size = 12),
-  ) +
-  ggtitle("B)")
+    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
+    axis.text.y = element_blank(),
+    axis.line.y = element_blank(),
+    axis.ticks.y = element_blank()
+  ) 
+
+fig2B <- fig2Bi | fig2Bii
 
 
-fig2 <- fig2A + fig2B +
+# From Ben
+library(ggbeeswarm)
+
+c_data <- read_delim("data/pipe/simulated/2pc_read_fractions.tsv")
+
+options(repr.plot.width=6, repr.plot.height=4)
+
+fig2C <- ggplot(data = c_data,  
+       aes(x = fct_relevel(novelty_category2, "novel phylum", "novel class", 
+                           "novel order", "novel family", "novel genus", "novel species"),
+           y = (bacterial_archaeal_bases/metagenome_size) * 100)) +
+  geom_beeswarm(cex=2) +
+  ylab('SingleM microbial fraction (%)') +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = 15, angle = 45, hjust = 1),
+    axis.text.y = element_text(size = 15),
+    title = element_text(size = 15, face = "bold"),
+        ) +
+  geom_hline(yintercept=(c(1.20,0.8))*100, colour='red') +
+  geom_hline(yintercept=100*(c(1.1,0.9)), colour='blue') +
+  scale_y_log10() +
+  xlab('') +
+  ggtitle("C)")
+
+
+
+fig2 <- (fig2A + fig2B) / fig2C +
   plot_layout()
 
-ggsave("figures/Figure_2.png", fig2, width = 15, height = 7.5, unit = "in")
+ggsave("figures/Figure_2.png", fig2, width = 7.5, height = 10, unit = "in")
