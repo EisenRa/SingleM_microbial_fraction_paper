@@ -23,7 +23,6 @@ singlem_method <- read_delim("data/sra/sra126_r214_mach2.condense.read_fraction6
   mutate(singlem_percent = as.numeric(sub("%", "", singlem_percent))) %>%
   inner_join(., meta_data_extra, by = join_by(acc == run))
 
-
 #Load and filter datasets
 merged <- acc_organism %>%
   inner_join(., ncbi_method, by = "acc") %>%
@@ -86,8 +85,8 @@ merged_filtered %>%
 
 # Create common theme
 theme_RE <- theme(
-  axis.text = element_text(size = 14),
-  axis.title = element_text(size = 14),
+  axis.text = element_text(size = 12),
+  axis.title = element_text(size = 12),
 )
 
 ################################################################################
@@ -98,13 +97,13 @@ fig4a <- merged_filtered %>%
   geom_abline(linewidth = 1) +
   geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
   geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
-  geom_point(size = 0.3, alpha = 0.2) +
-  coord_cartesian(expand = FALSE) +
+  geom_point(size = 0.3, alpha = 0.1) +
   theme_minimal() +
   theme_RE +
-  theme(axis.title.x = element_blank()) +
-  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  labs(y = "SingleM microbial fraction", x = "") +
   ggtitle("All samples")
+
+fig4a <- ggExtra::ggMarginal(fig4a, type="histogram", size=20, fill = "beige")
 
 ################################################################################
 # Misc STAT vs SingleM stats
@@ -154,9 +153,6 @@ b<-ncbi_winners %>%
   theme_void()
 
 a/b
-
-#get accessions 
-write_tsv(as_tibble(ncbi_greater2$acc), "data/sra/accessions_for_kingfisher.tsv")
 
 
 ################################################################################
@@ -214,14 +210,15 @@ fig4b <- merged_curated %>%
   geom_abline(linewidth = 1) +
   geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
   geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
-  geom_point(size = 0.5, alpha = 0.5) +
-  coord_cartesian(expand = FALSE) +
+  geom_point(size = 0.3, alpha = 0.25) +
   theme_minimal() +
   theme_RE +
   theme(axis.title = element_blank()) +
   guides(colour = guide_legend(override.aes = list(size=6))) +
-  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  labs(y = "", x = "") +
   ggtitle("Human gut metagenomes")
+
+fig4b <- ggExtra::ggMarginal(fig4b, type="histogram", size=20, fill = "beige")
 
 
 # Just african / SAmerican samples
@@ -234,18 +231,18 @@ fig4c <- merged_curated %>%
   geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
   geom_point(size = 1, alpha = 0.5) +
   scale_colour_manual(values = c("Africa" = "blue", "South America" = "darkgreen")) +
-  coord_cartesian(expand = FALSE) +
   theme_minimal() +
   theme_RE +
   theme(
-    legend.position = c(0.80, 0.25),
-    legend.title = element_text(size = 16),
-    legend.text = element_text(size = 16),
-    axis.title.x = element_blank()
+    legend.position = c(0.7, 0.25),
+    legend.title = element_blank(),
+    legend.text = element_text(size = 12),
   ) +
   guides(colour = guide_legend(override.aes = list(size=6))) +
-  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
-  ggtitle("African/South American gut metagenomes")
+  labs(y = "", x = "") +
+  ggtitle("African/South American gut")
+
+fig4c <- ggExtra::ggMarginal(fig4c, type="histogram", size=20, fill = "beige")
 
 
 ################################################################################
@@ -284,9 +281,11 @@ fig4d <- aamd_curated %>%
   geom_point(size = 1, alpha = 0.3) +
   theme_minimal() +
   theme_RE +
-  coord_cartesian(expand = FALSE) +
-  theme(axis.title = element_blank()) +
+  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
   ggtitle("Non-human animal metagenomes")
+
+fig4d <- ggExtra::ggMarginal(fig4d, type="densigram", size=20, fill = "beige")
+
 
 #stats
 aamd_curated %>%
@@ -307,59 +306,11 @@ fig4e <- marine_curated %>%
   geom_point(size = 1, alpha = 0.3) +
   theme_minimal() +
   theme_RE +
-  coord_cartesian(expand = FALSE) +
-  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  labs(y = "", x = "STAT microbial fraction") +
   ggtitle("Marine metagenomes")
 
+fig4e <- ggExtra::ggMarginal(fig4e, type="histogram", size=20, fill = "beige")
 
-# Supplementary figure X
-# % mapping to catalogue vs singlem estimate for samples from Nishimura & Yoshizawa 2022
-# https://www.nature.com/articles/s41597-022-01392-5 [table S1]
-nishi_mapping <- readxl::read_xlsx("data/Nishimura_2022_SI_1.xlsx", skip = 2)
-
-prok <- nishi_mapping %>%
-  filter(fraction == "prok enriched")
-
-nishi_merged <- marine_curated %>%
-  inner_join(., prok, by = join_by(sample_id == sra_sample)) %>%
-  select(sample_id, acc, sra_run, singlem_percent, percent_mapped_on_UGCMP, percent_mapped_on_OceanDNA_MAGs, ncbi_stat) %>%
-  mutate(percent_mapped_on_OceanDNA_MAGs = as.numeric(percent_mapped_on_OceanDNA_MAGs),
-         percent_mapped_on_UGCMP = as.numeric(percent_mapped_on_UGCMP)) %>%
-  rename(UGCMP = percent_mapped_on_UGCMP,
-         OceanDNA = percent_mapped_on_OceanDNA_MAGs,
-         SMF = singlem_percent,
-         `NCBI STAT` = ncbi_stat)
-
-nishi_merged %>%
-  pivot_longer(., cols = c(SMF, `NCBI STAT`, UGCMP, OceanDNA),
-               values_to = "percent") %>%
-  ggplot(aes(x = fct_relevel(name, "SMF", "UGCMP", "OceanDNA", "STAT"), 
-             y = percent, 
-             group = name, 
-             colour = name)) +
-  geom_boxplot() +
-  geom_jitter(height = 0, width = 0.3, alpha = 0.2) +
-  theme_classic() + 
-  theme(legend.position = 0,
-        axis.text = element_text(size = 16),
-        axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 20)) +
-  ylab("Percentage (%)")
-  
-
-# calculate DAMR for nishi et al
-nishi_merged %>%
-  summarise(DAMR = mean(UGCMP / SMF), DAMR_sd = sd(UGCMP / SMF))
-
-
-marine_curated %>%
-  inner_join(., prok, by = join_by(sample_id == sra_sample)) %>%
-  select(sample_id, acc, sra_run, singlem_percent, percent_mapped_on_UGCMP, percent_mapped_on_OceanDNA_MAGs) %>%
-  ggplot(aes(x = as.numeric(percent_mapped_on_UGCMP), y = singlem_percent)) +
-  geom_point() +
-  scale_x_continuous(limits = c(0, 100)) +
-  scale_y_continuous(limits = c(0, 100)) +
-  theme_minimal()
 
 ################################################################################
 # Soil metagenomes
@@ -371,12 +322,13 @@ fig4f <- merged_filtered %>%
   geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
   geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
   geom_point(size = 0.75, alpha = 0.5) +
-  coord_cartesian(expand = FALSE) +
   theme_minimal() +
   theme_RE +
   theme(axis.title.y = element_blank()) +
   labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
   ggtitle("Soil metagenomes")
+
+fig4f <- ggExtra::ggMarginal(fig4f, type="histogram", size=20, fill = "beige")
 
 
 # check out odd 'arm' in figure
@@ -398,8 +350,9 @@ merged_filtered %>%
 ################################################################################
 # Create composite figure 4
 ################################################################################
-Figure_4 <- fig4a + fig4b + fig4c + fig4d + fig4e + fig4f + plot_layout(ncol = 2) + plot_annotation(tag_levels = "A")
+Figure_4 <- wrap_elements(fig4a) + wrap_elements(fig4b) + wrap_elements(fig4c) + wrap_elements(fig4d) + wrap_elements(fig4e) + wrap_elements(fig4f) + 
+  plot_layout(ncol = 3) + plot_annotation(tag_levels = "A")
 
-ggsave("figures/Figure_4.png", Figure_4, width = 10, height = 15, unit = "in")
+ggsave("figures/Figure_4.png", Figure_4, width = 12, height = 9, unit = "in")
 
 

@@ -108,7 +108,7 @@ fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
 
 
 fig2Ac <- as.data.frame(zymo_plasmodium_accuracy) %>%
-  ggplot(aes(x = "+ plasmodium \nreads", 
+  ggplot(aes(x = "\\+ *Plasmodium* <br> reads", 
              y = zymo_plasmodium_accuracy,
              fill = "#00bfc4")) +
   geom_bar(stat = "identity") +
@@ -120,13 +120,12 @@ fig2Ac <- as.data.frame(zymo_plasmodium_accuracy) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 15, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
-  )
-
+  ) 
 
 fig2Ad <- as.data.frame(zymo_arabidopsis_accuracy) %>%
-  ggplot(aes(x = "+ arabidopsis \nreads", 
+  ggplot(aes(x = "\\+ *Arabidopsis* <br> reads", 
              y = zymo_arabidopsis_accuracy,
              fill = "#51a145")) +
   geom_bar(stat = "identity") +
@@ -138,7 +137,7 @@ fig2Ad <- as.data.frame(zymo_arabidopsis_accuracy) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 15, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
@@ -233,6 +232,7 @@ fig2C <- ggplot(data = c_data,
   theme(
     axis.text.x = element_text(size = 15, angle = 45, hjust = 1),
     axis.text.y = element_text(size = 15),
+    axis.title.y = element_blank(),
     title = element_text(size = 15, face = "bold"),
         ) +
   geom_hline(yintercept=(c(1.20,0.8))*100, colour='red') +
@@ -243,7 +243,7 @@ fig2C <- ggplot(data = c_data,
 
 
 
-fig2 <- (fig2A + fig2B) / fig2C +
-  plot_layout()
+fig2 <- fig2A + fig2B + fig2C +
+  plot_layout(widths = c(0.5, 0.5, 0.5, 0.5, 1, 2.5))
 
-ggsave("figures/Figure_2.png", fig2, width = 7.5, height = 10, unit = "in")
+ggsave("figures/Figure_2.png", fig2, width = 10, height = 5, unit = "in")
