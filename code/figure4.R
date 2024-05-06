@@ -331,21 +331,7 @@ fig4f <- merged_filtered %>%
 fig4f <- ggExtra::ggMarginal(fig4f, type="histogram", size=20, fill = "beige")
 
 
-# check out odd 'arm' in figure
-merged_filtered %>%
-  filter(organism == "soil metagenome") %>%
-  filter(singlem_percent < 50 & ncbi_stat > 25) %>%
-  ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
-  geom_point() +
-  scale_x_continuous(limits = c(0, 100)) +
-  scale_y_continuous(limits = c(0, 100))
 
-# PRJNA554847 (46 samples????) & PRJNA671703 account for 85% of this 'arm'
-merged_filtered %>%
-  filter(organism == "soil metagenome") %>%
-  filter(singlem_percent < 50 & ncbi_stat > 25) %>%
-  filter(bioproject_x == "PRJNA554847" | bioproject_x == "PRJNA671703") %>%
-  nrow()
 
 ################################################################################
 # Create composite figure 4
