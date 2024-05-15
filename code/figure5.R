@@ -92,11 +92,10 @@ fig5a <- ggplot(sll) +
   theme_minimal() +
   theme(
     axis.text = element_text(size = 14),
-    axis.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 16),
     legend.text = element_text(size = 12),
     legend.title = element_text(size = 14),
-    legend.position = c(0.1, 0.2),
-    legend.background = element_rect()
+    legend.position = c(0.1, 0.3),
   ) +
   geom_vline(xintercept=c(0, -90, 90)) +
   geom_vline(xintercept=c(-tropic,tropic), linetype='dashed') +
@@ -106,7 +105,7 @@ fig5a <- ggplot(sll) +
                         breaks = c(-180, -90, 0, 90, 180),
                         labels = c("-180°", "-90°", "0°", "90°", "180°")
                         ) +
-  labs(x = "Latitude", y = "SingleM microbial fraction")
+  labs(x = "Latitude", y = "SingleM microbial fraction (%)")
 
 
 fig5b <- merged %>%
@@ -123,14 +122,14 @@ fig5b <- merged %>%
   theme(
     axis.text.x = element_text(size = 16),
     axis.text.y = element_blank(),
-    axis.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 16),
     strip.text = element_text(size = 16, face = "bold"),
     strip.background = element_rect(fill = NA, linewidth = NA),
     panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank(),
-    axis.line = element_line(linewidth = 1)
+    axis.line = element_line(linewidth = 1),
   ) +
-  xlab("\nSingleM microbial fraction") +
+  xlab("\nSingleM microbial fraction (%)") +
   ylab("Density")
 
 

@@ -176,7 +176,7 @@ Using BASH here:
 
 ``` bash
 #Using kingfisher to download samples
-mkdir dodgy_libs && cd dodgy_libs
+mkdir data/insert_sizes && cd data/insert_sizes
 
 kingfisher get -p PRJNA554847 -m prefetch --download-threads 8
 kingfisher get -p PRJNA671703 -m prefetch --download-threads 8
@@ -192,39 +192,76 @@ for i in *_1.fastq.gz;
   -w 8;
 done
 
-#Collect insert sizes from json files
-for i in *.json;
-  do echo ${i/.json/} >> names.tsv &&
-  grep 'peak' $i | cut -f2 -d " " | sed 's/,//' >> inserts.tsv;
+#Collect insert sizes from json files, save as .csv files
+for i in *.json; 
+  do grep 'histogram' $i | cut -f2 -d "[" | sed 's/]//' | sed "s@0@${i/.json/},0@" > ${i/.json/.csv}; 
 done
-
-#Save it to a tsv file
-paste names.tsv inserts.tsv > data/insert_sizes.tsv
 ```
 
 ### Correlations between insert size and SMF/STAT estimates
 
 ``` r
-inserts <- read_delim("../data/insert_sizes.tsv", 
-                      col_names = c("acc", "insert_size"))
+#import insert sizes into a long dataframe
+insert_files <- list.files(path = "../data/insert_sizes/", 
+                           pattern = "*.csv",
+                           full.names = T)
 
+import_inserts <- function(x){
+  read_csv(x, col_names = c("sample_id", seq(0, 269))) %>%
+    select(!starts_with("X")) %>%
+    pivot_longer(cols = !sample_id, 
+                 values_to = "reads",
+                 names_to = "bp")
+}
+
+insert_df <- map(insert_files, import_inserts) %>% 
+  bind_rows() %>%
+  transform(bp = as.numeric(bp)) %>%
+  as_tibble() %>%
+  mutate(percent = reads / sum(reads), .by = sample_id)
+
+
+#plot for each sample
+insert_df %>%
+  ggplot(aes(x = bp, y = percent, group = sample_id)) +
+  geom_line(alpha = 0.2) +
+  scale_x_continuous(breaks = seq(0, 270, 20)) +
+  coord_cartesian(expand = F) +
+  theme_minimal() +
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14)) +
+  labs(x = "read length", y = "density")
+```
+
+![](SI_note2_files/figure-commonmark/unnamed-chunk-6-1.png)
+
+``` r
+#calculate mode per sample 
+modes <- insert_df %>%
+  mutate(max = max(reads), .by = sample_id) %>%
+  filter(reads == max(reads), .by = sample_id) %>%
+  rename(mode = bp)
+
+#combine with smf/stat values
 merged_projects <- merged_filtered %>%
   filter(bioproject_x %in% top2_outliers$bioproject_x) %>%
-  left_join(., inserts, by = join_by("acc")) %>%
-  filter(!is.na(insert_size))
+  left_join(., modes, by = join_by("acc" == "sample_id")) %>%
+  filter(!is.na(mode))
 
 merged_projects %>%
-  ggplot(aes(y = singlem_percent, x = insert_size, 
+  ggplot(aes(y = singlem_percent, x = mode, 
              colour = bioproject_x)) +
   geom_point() +
   theme_minimal() + 
   theme_re
 ```
 
-![](SI_note2_files/figure-commonmark/unnamed-chunk-6-1.png)
+![](SI_note2_files/figure-commonmark/unnamed-chunk-6-2.png)
 
 ``` r
-median_insert <- median(merged_projects$insert_size)
+median_insert <- median(merged_projects$mode)
+mean_insert <- mean(merged_projects$mode)
+sd_insert <- sd(merged_projects$mode)
 median_soil_stat <- scales::number(median(merged_filtered %>% 
                            filter(organism == "soil metagenome") %>% 
                            pull(ncbi_stat)),
@@ -233,12 +270,12 @@ median_outlier_stat <- scales::number(median(merged_projects$ncbi_stat), accurac
 ```
 
 Most samples for these two bioprojects have very short insert sizes
-median = 92. These two outlier bioprojects have some of the highest STAT
-values for all soil samples: median STAT for all soil samples = 6.12%,
-median for outlier bioprojects = 40.27%. These short insert sizes could
-support the idea **2)** that STAT is misclassifying adapter sequences as
-bacterial, however, this is beyond the scope of exploring with this
-dataset.
+median = 92; mean = 94.0243902; +- 23.2929746. These two outlier
+bioprojects have some of the highest STAT values for all soil samples:
+median STAT for all soil samples = 6.12%, median for outlier bioprojects
+= 40.27%. These short insert sizes could support the idea **2)** that
+STAT is misclassifying adapter sequences as bacterial, however, this is
+beyond the scope of exploring with this dataset.
 
 These results support idea **1)**, that short insert sizes negatively
 impact SMF estimates, as we can see in the figure for samples that have

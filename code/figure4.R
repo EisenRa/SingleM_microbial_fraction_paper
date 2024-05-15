@@ -86,7 +86,8 @@ merged_filtered %>%
 # Create common theme
 theme_RE <- theme(
   axis.text = element_text(size = 12),
-  axis.title = element_text(size = 12),
+  plot.title = element_text(size = 13, face = "bold"),
+  axis.title = element_text(size = 13)
 )
 
 ################################################################################
@@ -100,7 +101,7 @@ fig4a <- merged_filtered %>%
   geom_point(size = 0.3, alpha = 0.1) +
   theme_minimal() +
   theme_RE +
-  labs(y = "SingleM microbial fraction", x = "") +
+  labs(y = "SingleM microbial fraction (%)", x = "STAT microbial fraction (%)") +
   ggtitle("All samples")
 
 fig4a <- ggExtra::ggMarginal(fig4a, type="histogram", size=20, fill = "beige")
@@ -213,9 +214,7 @@ fig4b <- merged_curated %>%
   geom_point(size = 0.3, alpha = 0.25) +
   theme_minimal() +
   theme_RE +
-  theme(axis.title = element_blank()) +
-  guides(colour = guide_legend(override.aes = list(size=6))) +
-  labs(y = "", x = "") +
+  labs(y = "", x = "STAT microbial fraction (%)") +
   ggtitle("Human gut metagenomes")
 
 fig4b <- ggExtra::ggMarginal(fig4b, type="histogram", size=20, fill = "beige")
@@ -239,7 +238,7 @@ fig4c <- merged_curated %>%
     legend.text = element_text(size = 12),
   ) +
   guides(colour = guide_legend(override.aes = list(size=6))) +
-  labs(y = "", x = "") +
+  labs(y = "", x = "STAT microbial fraction (%)") +
   ggtitle("African/South American gut")
 
 fig4c <- ggExtra::ggMarginal(fig4c, type="histogram", size=20, fill = "beige")
@@ -281,10 +280,10 @@ fig4d <- aamd_curated %>%
   geom_point(size = 1, alpha = 0.3) +
   theme_minimal() +
   theme_RE +
-  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  labs(y = "SingleM microbial fraction (%)", x = "STAT microbial fraction (%)") +
   ggtitle("Non-human animal metagenomes")
 
-fig4d <- ggExtra::ggMarginal(fig4d, type="densigram", size=20, fill = "beige")
+fig4d <- ggExtra::ggMarginal(fig4d, type="histogram", size=20, fill = "beige")
 
 
 #stats
@@ -305,8 +304,9 @@ fig4e <- marine_curated %>%
   geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
   geom_point(size = 1, alpha = 0.3) +
   theme_minimal() +
+  scale_x_continuous(limits = c(0, 100)) +
   theme_RE +
-  labs(y = "", x = "STAT microbial fraction") +
+  labs(y = "", x = "STAT microbial fraction (%)") +
   ggtitle("Marine metagenomes")
 
 fig4e <- ggExtra::ggMarginal(fig4e, type="histogram", size=20, fill = "beige")
@@ -322,10 +322,11 @@ fig4f <- merged_filtered %>%
   geom_abline(linewidth = 1, intercept = 5, colour = "grey") +
   geom_abline(linewidth = 1, intercept = -5, colour = "grey") +
   geom_point(size = 0.75, alpha = 0.5) +
+  scale_x_continuous(limits = c(0, 100)) +
   theme_minimal() +
   theme_RE +
   theme(axis.title.y = element_blank()) +
-  labs(y = "SingleM microbial fraction", x = "STAT microbial fraction") +
+  labs(y = "SingleM microbial fraction (%)", x = "STAT microbial fraction (%)") +
   ggtitle("Soil metagenomes")
 
 fig4f <- ggExtra::ggMarginal(fig4f, type="histogram", size=20, fill = "beige")
