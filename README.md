@@ -1,4 +1,5 @@
-# SingleM_microbial_fraction_paper
-Repository containing code and data to reproduce the SingleM microbial fraction paper.
+# Large-scale estimation of bacterial and archaeal DNA prevalence in metagenomes reveals biome-specific patterns
+Repository containing code and data to reproduce the analyses and figures in this paper **[PREPRINT LINK]**.
 
-# I'll add more description/make it prettier just prior to submission
+The SingleM GitHub repository [is available here](https://github.com/wwood/singlem).
+Documenation for SingleM Microbial Fraction [is available here](https://wwood.github.io/singlem/tools/microbial_fraction).
