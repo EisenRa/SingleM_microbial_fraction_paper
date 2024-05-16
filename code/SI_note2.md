@@ -230,7 +230,7 @@ insert_df %>%
   theme_minimal() +
   theme(axis.text = element_text(size = 14),
         axis.title = element_text(size = 14)) +
-  labs(x = "read length", y = "density")
+  labs(x = "insert size", y = "density")
 ```
 
 ![](SI_note2_files/figure-commonmark/unnamed-chunk-6-1.png)
