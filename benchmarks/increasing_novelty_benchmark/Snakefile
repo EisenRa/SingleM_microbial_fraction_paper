@@ -1,5 +1,4 @@
 
-import extern
 import os
 
 # Add the parent directory to sys.path
@@ -8,7 +7,7 @@ from tool_reference_data import *
 
 num_threads = 8
 
-tools = ['singlem']
+tools = ['singlem','microbe_census']
 
 output_prefix = 'output_'
 output_dirs = list([output_prefix+tool for tool in tools])
@@ -40,6 +39,8 @@ gtdb_ar_taxonomy = '../ar53_taxonomy_r207.tsv'
 rule all:
     input:
         expand(output_dirs_dict['singlem'] + "/singlem/known{known_percent}/{sample}.smf", known_percent=known_species_fractions, sample=datasets),
+        expand(output_dirs_dict['microbe_census'] + "/microbe_census/known{known_percent}/{sample}.tsv", known_percent=known_species_fractions, sample=datasets)
+
 
 # rule all_reads:
 # 	input:
@@ -94,7 +95,8 @@ rule singlem_run_to_profile:
         num_threads
     resources:
         mem_mb=8000,
-        runtime='2h'
+        runtime='2h',
+        db=singlem_metapackage,
     log:
         output_dirs_dict['singlem'] + "/logs/singlem/known{known_percent}/{sample}.log"
     shell:
@@ -115,3 +117,24 @@ rule singlem_smf:
         output_dirs_dict['singlem'] + "/logs/singlem/known{known_percent}/{sample}.smf.log"
     shell:
         "singlem microbial_fraction --metapackage {input.db} -p {input.report} --forward {input.r1} --reverse {input.r2} >{output.smf} 2> {log}"
+
+rule microbe_census:
+    input:
+        r1=fastq_dir + "/known{known_percent}/{sample}.1.fq.gz",
+        r2=fastq_dir + "/known{known_percent}/{sample}.2.fq.gz",
+    benchmark:
+        benchmark_dir + "/microbe_census/known{known_percent}/{sample}-"+str(num_threads)+"threads.benchmark"
+    output:
+        report=output_dirs_dict['microbe_census'] + "/microbe_census/known{known_percent}/{sample}.tsv",
+        done=touch(output_dirs_dict['microbe_census'] + "/microbe_census/known{known_percent}/{sample}.tsv.done")
+    conda:
+        "envs/microbe_census.yml"
+    threads:
+        1 # not obvious that >1 does anything.
+    resources:
+        mem_mb=8000,
+        runtime='24h'
+    log:
+        output_dirs_dict['microbe_census'] + "/logs/microbe_census/known{known_percent}/{sample}.log"
+    shell:
+        "run_microbe_census.py -t {threads} {input.r1},{input.r2} {output.report} &> {log}"
