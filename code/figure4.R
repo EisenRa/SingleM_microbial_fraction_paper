@@ -78,6 +78,25 @@ merged_filtered %>%
 merged_filtered %>%
   summarise(n = n(), .by = warning)
 
+## warnings by biome type
+merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(n = n(), .by = warning)
+
+aamd_curated %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(n = n(), .by = warning)
+
+marine_curated %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(n = n(), .by = warning)
+
+merged_filtered %>%
+  filter(organism == "soil metagenome") %>%
+  filter(singlem_percent > 5) %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(n = n(), .by = warning)
 
 ################################################################################
 ## Plots
@@ -317,6 +336,7 @@ fig4e <- ggExtra::ggMarginal(fig4e, type="histogram", size=20, fill = "beige")
 ################################################################################
 fig4f <- merged_filtered %>%
   filter(organism == "soil metagenome") %>%
+  filter(singlem_percent > 5) %>%
   ggplot(aes(y = singlem_percent, x = ncbi_stat)) +
   geom_abline(linewidth = 1) +
   geom_abline(linewidth = 1, intercept = 5, colour = "grey") +

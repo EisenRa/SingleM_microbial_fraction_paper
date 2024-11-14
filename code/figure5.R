@@ -10,6 +10,8 @@ library(janitor)
 library(patchwork)
 library(glue)
 library(emo)
+library(tinytable)
+
 #note I needed to set my graphics device backend to 'AGG': tools -> global options -> graphics
 
 acc_organism <- read_delim("data/sra/acc_organism.csv.gz")
@@ -34,6 +36,20 @@ merged <- acc_organism %>%
 ## Plotting
 types_of_interest = c('human gut metagenome','marine metagenome','soil metagenome', 
                       'food metagenome','human oral metagenome','plant metagenome')
+
+## Average Genome Size per biome
+ags <- read_delim("data/sra/per_acc_summary.csv.gz") %>%
+  inner_join(., merged, by = join_by(sample == acc)) %>%
+  mutate(AGS_mb = average_bacterial_archaeal_genome_size / 1000000) %>%
+  filter(organism.x %in% types_of_interest)
+
+ags %>%
+  summarise(mean_AGS = mean(AGS_mb),
+            median_AGS = median(AGS_mb),
+            max_AGS = max(AGS_mb),
+            min_AGS = min(AGS_mb),
+            .by = organism.x) %>% 
+  tt(., digits = 3)
 
 
 #Use glue to insert n() for each type
