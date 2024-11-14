@@ -242,8 +242,36 @@ fig2C <- ggplot(data = c_data,
   ggtitle("C)")
 
 
+#Panel D
 
-fig2 <- fig2A + fig2B + fig2C +
+#import data
+file_paths <- list.files(path = "benchmarks/increasing_novelty_benchmark/output_singlem/singlem/", full.names = T) %>%
+  str_sort(., numeric = T)
+
+novelty_df <- read_delim(paste0(file_paths, "/marine0.smf")) %>%
+  mutate(novel = seq(0, 100, 10))
+
+#plot plot
+fig2D <- novelty_df %>%
+  ggplot(aes(x = novel, y= read_fraction)) + 
+  geom_point() + 
+  theme_classic() + 
+  theme(
+    axis.text.x = element_text(size = 15, angle = 45, hjust = 1),
+    axis.text.y = element_text(size = 15),
+    title = element_text(size = 15, face = "bold"),
+  ) +
+  ylim(0,120) + 
+  geom_line() + 
+  labs(x = '% of community that is novel', y = 'SingleM Microbial Fraction') + 
+  geom_hline(yintercept=c(110, 90), colour='blue') + 
+  geom_hline(yintercept=c(120, 80), colour='red')
+
+
+
+fig2top <- fig2A + fig2B + fig2C +
   plot_layout(widths = c(0.5, 0.5, 0.5, 0.5, 1, 2.5))
 
-ggsave("figures/Figure_2.png", fig2, width = 10, height = 5, unit = "in")
+fig2 <- fig2top / fig2D
+
+ggsave("figures/Figure_2.png", fig2, width = 10, height = 10, unit = "in")

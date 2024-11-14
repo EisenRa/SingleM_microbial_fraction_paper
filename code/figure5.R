@@ -144,6 +144,7 @@ fig5b <- merged %>%
     panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank(),
     axis.line = element_line(linewidth = 1),
+    panel.spacing.x = unit(25, "pt")
   ) +
   xlab("\nSingleM microbial fraction (%)") +
   ylab("Density")
