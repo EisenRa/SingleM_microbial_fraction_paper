@@ -59,7 +59,7 @@ fig2Aa <- as.data.frame(zymo_accuracy) %>%
   geom_bar(stat = "identity") +
   scale_fill_manual(values = "#00b0f0") +
   geom_hline(yintercept = bacterial_archaeal_ground_truth_bp / sim_zymo_bp * 100) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0,0)) +
   theme_classic() + 
   theme(
     legend.position = "none",
@@ -90,13 +90,13 @@ zymo_plasmodium$read_fraction
 
 
 fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
-  ggplot(aes(x = "+ homo \nreads", 
+  ggplot(aes(x = "+ Homo \nreads", 
              y = zymo_homo_accuracy,
              fill = "#e2f0d9")) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values = "#e2f0d9") +
   geom_hline(yintercept = bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_homo_bp_total * 100) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0,0)) +
   theme_classic() + 
   theme(
     legend.position = "none",
@@ -114,7 +114,7 @@ fig2Ac <- as.data.frame(zymo_plasmodium_accuracy) %>%
   geom_bar(stat = "identity") +
   scale_fill_manual(values = "#00bfc4") +
   geom_hline(yintercept = bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_plasmodium_bp_total * 100) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0,0)) +
   theme_classic() + 
   theme(
     legend.position = "none",
@@ -131,7 +131,7 @@ fig2Ad <- as.data.frame(zymo_arabidopsis_accuracy) %>%
   geom_bar(stat = "identity") +
   scale_fill_manual(values = "#51a145") +
   geom_hline(yintercept = bacterial_archaeal_ground_truth_bp / sim_zymo_spiked_arabidopsis_bp_total * 100) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0,0)) +
   theme_classic() + 
   theme(
     legend.position = "none",
@@ -178,7 +178,7 @@ fig2Bi <- cami %>%
              fill = metagenome)) +
   geom_bar(stat = "identity") +
   geom_hline(yintercept = 97.7) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0,0)) +
   scale_fill_manual(values = c("darkblue")) +
   theme_classic() + 
   theme(
@@ -198,7 +198,7 @@ fig2Bii <- cami %>%
              fill = metagenome)) +
   geom_bar(stat = "identity") +
   geom_hline(yintercept = 100) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0,0)) +
   scale_fill_manual(values = c("black")) +
   theme_classic() + 
   theme(
@@ -215,34 +215,7 @@ fig2Bii <- cami %>%
 fig2B <- fig2Bi | fig2Bii
 
 
-# From Ben
-library(ggbeeswarm)
-
-c_data <- read_delim("data/pipe/simulated/2pc_read_fractions.tsv")
-
-options(repr.plot.width=6, repr.plot.height=4)
-
-fig2C <- ggplot(data = c_data,  
-       aes(x = fct_relevel(novelty_category2, "novel phylum", "novel class", 
-                           "novel order", "novel family", "novel genus", "novel species"),
-           y = (bacterial_archaeal_bases/metagenome_size) * 100)) +
-  geom_beeswarm(cex=2) +
-  ylab('SingleM microbial fraction (%)') +
-  theme_classic() +
-  theme(
-    axis.text.x = element_text(size = 15, angle = 45, hjust = 1),
-    axis.text.y = element_text(size = 15),
-    axis.title.y = element_blank(),
-    title = element_text(size = 15, face = "bold"),
-        ) +
-  geom_hline(yintercept=(c(1.20,0.8))*100, colour='red') +
-  geom_hline(yintercept=100*(c(1.1,0.9)), colour='blue') +
-  scale_y_log10() +
-  xlab('') +
-  ggtitle("C)")
-
-
-#Panel D
+#Panel C
 
 #import data
 file_paths <- list.files(path = "benchmarks/increasing_novelty_benchmark/output_singlem/singlem/", full.names = T) %>%
@@ -252,26 +225,31 @@ novelty_df <- read_delim(paste0(file_paths, "/marine0.smf")) %>%
   mutate(novel = seq(0, 100, 10))
 
 #plot plot
-fig2D <- novelty_df %>%
+fig2C <- novelty_df %>%
   ggplot(aes(x = novel, y= read_fraction)) + 
   geom_point() + 
   theme_classic() + 
   theme(
-    axis.text.x = element_text(size = 15, angle = 45, hjust = 1),
+    axis.text.x = element_text(size = 15),
     axis.text.y = element_text(size = 15),
+    axis.title.y = element_blank(),
+    axis.title.x = element_text(vjust = 25),
     title = element_text(size = 15, face = "bold"),
   ) +
-  ylim(0,120) + 
+  ylim(70,120) + 
   geom_line() + 
-  labs(x = '% of community that is novel', y = 'SingleM Microbial Fraction') + 
+  labs(x = "% of community\nthat is novel") + 
   geom_hline(yintercept=c(110, 90), colour='blue') + 
-  geom_hline(yintercept=c(120, 80), colour='red')
+  geom_hline(yintercept=c(120, 80), colour='red') +
+  geom_hline(yintercept=c(100), colour='grey') +
+  ggtitle("C)")
 
 
 
-fig2top <- fig2A + fig2B + fig2C +
-  plot_layout(widths = c(0.5, 0.5, 0.5, 0.5, 1, 2.5))
+fig2 <- fig2A + fig2B + fig2C +
+  plot_layout(widths = c(0.5, 0.5, 0.5, 0.5, 1, 3))
 
-fig2 <- fig2top / fig2D
+#fig2 <- fig2top / fig2C
 
-ggsave("figures/Figure_2.png", fig2, width = 10, height = 10, unit = "in")
+ggsave("figures/Figure_2.png", fig2, width = 10, height = 6, unit = "in")
+
