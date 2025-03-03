@@ -222,11 +222,12 @@ file_paths <- list.files(path = "benchmarks/increasing_novelty_benchmark/output_
   str_sort(., numeric = T)
 
 novelty_df <- read_delim(paste0(file_paths, "/marine0.smf")) %>%
-  mutate(novel = seq(0, 100, 10))
+  mutate(novel = seq(0, 100, 10),
+         smf_uncapped = (bacterial_archaeal_bases / metagenome_size) * 100)
 
 #plot plot
 fig2C <- novelty_df %>%
-  ggplot(aes(x = novel, y= read_fraction)) + 
+  ggplot(aes(x = novel, y= smf_uncapped)) + 
   geom_point() + 
   theme_classic() + 
   theme(
