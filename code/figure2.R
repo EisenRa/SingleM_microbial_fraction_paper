@@ -90,7 +90,7 @@ zymo_plasmodium$read_fraction
 
 
 fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
-  ggplot(aes(x = "+ Homo \nreads", 
+  ggplot(aes(x = "\\+ *Homo* <br> reads", 
              y = zymo_homo_accuracy,
              fill = "#e2f0d9")) +
   geom_bar(stat = "identity") +
@@ -102,7 +102,7 @@ fig2Ab <- as.data.frame(zymo_homo_accuracy) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = 15, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 15, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 

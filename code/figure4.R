@@ -262,6 +262,17 @@ fig4c <- merged_curated %>%
 
 fig4c <- ggExtra::ggMarginal(fig4c, type="histogram", size=20, fill = "beige")
 
+# warnings
+
+sa_a_human <- merged_curated %>%
+  filter(organism == "human gut metagenome") %>%
+  filter(continent == "Africa" | continent == "South America") 
+
+merged_filtered %>%
+  filter(acc %in% sa_a_human$acc) %>%
+  filter(singlem_percent > 5) %>%
+  filter(!is.na(ncbi_stat)) %>%
+  summarise(n = n(), .by = warning)
 
 ################################################################################
 # Animal metagenomes
