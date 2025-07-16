@@ -39,7 +39,8 @@ gtdb_ar_taxonomy = '../ar53_taxonomy_r207.tsv'
 rule all:
     input:
         expand(output_dirs_dict['singlem'] + "/singlem/known{known_percent}/{sample}.smf", known_percent=known_species_fractions, sample=datasets),
-        expand(output_dirs_dict['microbe_census'] + "/microbe_census/known{known_percent}/{sample}.tsv", known_percent=known_species_fractions, sample=datasets)
+        expand(output_dirs_dict['microbe_census'] + "/microbe_census/known{known_percent}/{sample}.tsv", known_percent=known_species_fractions, sample=datasets),
+        os.path.join(workflow.basedir, 'genome_sizes.tsv')
 
 
 # rule all_reads:
@@ -138,3 +139,11 @@ rule microbe_census:
         output_dirs_dict['microbe_census'] + "/logs/microbe_census/known{known_percent}/{sample}.log"
     shell:
         "run_microbe_census.py -t {threads} {input.r1},{input.r2} {output.report} &> {log}"
+
+rule calculate_genome_sizes:
+    output:
+        genome_sizes=os.path.join(workflow.basedir, 'genome_sizes.tsv')
+    conda:
+        "envs/seqkit.yml"
+    shell:
+        "seqkit stats -T ../tool_reference_data/new_in_r214/*fna ../reference_genomes/shadow/*a > {output.genome_sizes}"
