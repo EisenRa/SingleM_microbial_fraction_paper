@@ -62,7 +62,7 @@ rm *.txt
 
 ##Some refenences have contigs <390 bp (therefore can't use them), fix:
 
-for i in source_genomes*.fasta;
+for i in source_genomes/*.fasta;
   do reformat.sh \
   in=$i \
   out=${i/.fasta/_FIXED.fasta} \
@@ -110,8 +110,7 @@ done
 #Calculate mbp of plasmids in plant/marine metagenomes:
 filterbyname.sh in=CAMI2_marine0-R1.fastq.gz out=plasmids_marine.fastq names=RNODE include=t substring=t
 filterbyname.sh in=CAMI2_plant0-R1 out=plasmids_plant.fastq names=RNODE include=t substring=t
-
-
+filterbyname.sh in=CAMI2_marine1_R1.fastq.gz out=plasmids_marine1.fastq names=RNODE include=t substring=t
 
 
 

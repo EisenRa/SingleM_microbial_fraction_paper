@@ -45,16 +45,25 @@ pigz -p $THREADS 2_Simulated_reads/Simulated_Zymo*.fastq
 #Need to randomly sample the human reads to 1.14 Gbp -> 25% mock vs 75% human
 seqtk sample -s 1337 2_Simulated_reads/Human_reads-R1.fastq.gz 3800000 > 2_Simulated_reads/Human_reads_3-8M_1.fastq
 seqtk sample -s 1337 2_Simulated_reads/Human_reads-R2.fastq.gz 3800000 > 2_Simulated_reads/Human_reads_3-8M_2.fastq
-pigz -p $THREADS 2_Simulated_reads/Human_reads_3-8M*.fastq
+seqtk sample -s 255 2_Simulated_reads/Human_reads2-R1.fastq 1900000 > 2_Simulated_reads/Human_reads_1-9M_1.fastq
+seqtk sample -s 255 2_Simulated_reads/Human_reads2-R2.fastq 1900000 > 2_Simulated_reads/Human_reads_1-9M_2.fastq
+pigz -p $THREADS 2_Simulated_reads/Human_reads*.fastq
 
 cat 2_Simulated_reads/Human_reads_3-8M_1.fastq.gz 2_Simulated_reads/Simulated_Zymo_R1.fastq.gz > 2_Simulated_reads/Simulated_Zymo_Spiked_Homo_R1.fastq.gz
 cat 2_Simulated_reads/Human_reads_3-8M_2.fastq.gz 2_Simulated_reads/Simulated_Zymo_R2.fastq.gz > 2_Simulated_reads/Simulated_Zymo_Spiked_Homo_R2.fastq.gz
+cat 2_Simulated_reads/Human_reads_1-9M_1.fastq.gz 2_Simulated_reads/Simulated_Zymo2_R1.fastq.gz > 2_Simulated_reads/Simulated_Zymo2_Spiked_Homo_R1.fastq.gz
+cat 2_Simulated_reads/Human_reads_1-9M_2.fastq.gz 2_Simulated_reads/Simulated_Zymo2_R2.fastq.gz > 2_Simulated_reads/Simulated_Zymo2_Spiked_Homo_R2.fastq.gz
 
 #Create two more metagenomes with spiked in arabidopsis and plasmodium DNA
 cat 2_Simulated_reads/Arabadopsis_reads-R1.fastq.gz 2_Simulated_reads/Simulated_Zymo_R1.fastq.gz > 2_Simulated_reads/Simulated_Zymo_Spiked_Arabidopsis_R1.fastq.gz
 cat 2_Simulated_reads/Arabadopsis_reads-R2.fastq.gz 2_Simulated_reads/Simulated_Zymo_R2.fastq.gz > 2_Simulated_reads/Simulated_Zymo_Spiked_Arabidopsis_R2.fastq.gz
+cat 2_Simulated_reads/Arabadopsis_reads2-R1.fastq.gz 2_Simulated_reads/Simulated_Zymo2_R1.fastq.gz > 2_Simulated_reads/Simulated_Zymo2_Spiked_Arabidopsis_R1.fastq.gz
+cat 2_Simulated_reads/Arabadopsis_reads2-R2.fastq.gz 2_Simulated_reads/Simulated_Zymo2_R2.fastq.gz > 2_Simulated_reads/Simulated_Zymo2_Spiked_Arabidopsis_R2.fastq.gz
+
 cat 2_Simulated_reads/Plasmodium_reads-R1.fastq.gz 2_Simulated_reads/Simulated_Zymo_R1.fastq.gz > 2_Simulated_reads/Simulated_Zymo_Spiked_Plasmodium_R1.fastq.gz
 cat 2_Simulated_reads/Plasmodium_reads-R2.fastq.gz 2_Simulated_reads/Simulated_Zymo_R2.fastq.gz > 2_Simulated_reads/Simulated_Zymo_Spiked_Plasmodium_R2.fastq.gz
+cat 2_Simulated_reads/Plasmodium_reads2-R1.fastq.gz 2_Simulated_reads/Simulated_Zymo2_R1.fastq.gz > 2_Simulated_reads/Simulated_Zymo2_Spiked_Plasmodium_R1.fastq.gz
+cat 2_Simulated_reads/Plasmodium_reads2-R2.fastq.gz 2_Simulated_reads/Simulated_Zymo2_R2.fastq.gz > 2_Simulated_reads/Simulated_Zymo2_Spiked_Plasmodium_R2.fastq.gz
 
 ### Map simulated reads to reference genomes using Bowtie2
 cat 1_References/ZymoBIOMICS.STD.refseq.v2/Genomes/*.fasta > 1_References/ZymoCatted.fna
