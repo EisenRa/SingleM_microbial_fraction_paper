@@ -97,7 +97,7 @@ fig2Aa1 <- as.data.frame(zymo_smf) %>%
     title = element_text(size = 16, face = "bold"),
     axis.title.x = element_blank(),
     axis.title.y = element_text(size = 15),
-    axis.text.x = element_text(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = element_text(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_text(size = 15),
   ) +
   ylab("SingleM microbial fraction (%)") +
@@ -116,7 +116,7 @@ fig2Aa2 <- as.data.frame(zymo2_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
@@ -135,7 +135,7 @@ fig2Ab1 <- as.data.frame(zymo_homo_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
@@ -152,7 +152,7 @@ fig2Ab2 <- as.data.frame(zymo2_homo_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   ) 
 
@@ -170,7 +170,7 @@ fig2Ac1 <- as.data.frame(zymo_plasmodium_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   ) 
 
@@ -187,7 +187,7 @@ fig2Ac2 <- as.data.frame(zymo2_plasmodium_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   ) 
 
@@ -205,7 +205,7 @@ fig2Ad1 <- as.data.frame(zymo_arabidopsis_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
@@ -222,7 +222,7 @@ fig2Ad2 <- as.data.frame(zymo2_arabidopsis_smf) %>%
     legend.position = "none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
-    axis.text.x = ggtext::element_markdown(size = 12, angle = 45, vjust = 0.5),
+    axis.text.x = ggtext::element_markdown(size = 10, angle = 45, vjust = 0.5),
     axis.text.y = element_blank()
   )
 
@@ -333,7 +333,7 @@ fig2C <- novelty_df %>%
     axis.text.x = element_text(size = 15),
     axis.text.y = element_text(size = 15),
     axis.title.y = element_blank(),
-    axis.title.x = element_text(vjust = 20),
+    axis.title.x = element_text(vjust = 14),
     title = element_text(size = 15, face = "bold"),
   ) +
   ylim(70,120) + 
@@ -347,7 +347,7 @@ fig2C <- novelty_df %>%
 
 
 fig2 <- fig2A + fig2B + fig2C +
-  plot_layout(widths = c(0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 1, 3))
+  plot_layout(widths = c(0.20, 0.20, 0.20, 0.20, 0.20, 0.20, 0.20, 0.20, 1, 3))
 
 
 
